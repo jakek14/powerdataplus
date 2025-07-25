@@ -36,7 +36,6 @@ export function Timeline() {
   const [currentStep, setCurrentStep] = useState(0)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
-  const scrollTimeout = useRef<NodeJS.Timeout | null>(null)
 
   // Auto-center on scroll end
   useEffect(() => {
