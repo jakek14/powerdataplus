@@ -385,3 +385,67 @@ html.dark .text-foreground {
 html.dark .text-muted-foreground {
   color: oklch(0.705 0.015 286.067) !important;
 }
+
+/* Fix borders and outlines */
+html.dark .border {
+  border-color: oklch(0.885 0.006 286.033) !important;
+}
+
+html.dark .border-border {
+  border-color: oklch(0.885 0.006 286.033) !important;
+}
+
+html.dark .border-input {
+  border-color: oklch(0.274 0.006 286.033) !important;
+}
+
+html.dark input {
+  border-color: oklch(0.274 0.006 286.033) !important;
+  background-color: oklch(0.274 0.006 286.033) !important;
+}
+
+html.dark button {
+  border-color: oklch(0.885 0.006 286.033) !important;
+}
+
+/* Fix table borders and dividers */
+html.dark table {
+  border-color: oklch(0.885 0.006 286.033) !important;
+}
+
+html.dark th {
+  border-color: oklch(0.885 0.006 286.033) !important;
+  color: oklch(0.985 0 0) !important;
+}
+
+html.dark td {
+  border-color: oklch(0.885 0.006 286.033) !important;
+  color: oklch(0.985 0 0) !important;
+}
+
+html.dark tr {
+  border-color: oklch(0.885 0.006 286.033) !important;
+}
+
+/* Fix card and container borders */
+html.dark .card {
+  border-color: oklch(0.885 0.006 286.033) !important;
+  background-color: oklch(0.141 0.005 285.823) !important;
+}
+
+html.dark .bg-card {
+  background-color: oklch(0.141 0.005 285.823) !important;
+}
+
+/* Fix any remaining bright elements */
+html.dark * {
+  outline-color: oklch(0.885 0.006 286.033) !important;
+}
+
+html.dark .ring {
+  ring-color: oklch(0.442 0.017 285.786) !important;
+}
+
+html.dark .shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2) !important;
+}

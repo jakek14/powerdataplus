@@ -43,25 +43,25 @@ const MemberList: React.FC = () => {
     <div className="w-full relative">
       {/* Desktop Table - Full columns */}
       <div className="hidden md:block">
-        <div className="w-full border border-gray-200 rounded-lg overflow-hidden">
+        <div className="w-full border border-border rounded-lg overflow-hidden">
           {/* Header */}
-          <div className="bg-gray-50 grid grid-cols-4">
-            <div className="py-1 text-xs font-medium text-gray-500 uppercase tracking-wider flex justify-center">
+          <div className="bg-muted grid grid-cols-4">
+            <div className="py-1 text-xs font-medium text-muted-foreground uppercase tracking-wider flex justify-center">
               <div className="text-left text-xs">
                 Name
               </div>
             </div>
-            <div className="px-2 py-1 text-xs font-medium text-gray-500 uppercase tracking-wider flex justify-center">
+            <div className="px-2 py-1 text-xs font-medium text-muted-foreground uppercase tracking-wider flex justify-center">
               <div className="text-left text-xs">
                 Email
               </div>
             </div>
-            <div className="px-2 py-1 text-xs font-medium text-gray-500 uppercase tracking-wider flex justify-center">
+            <div className="px-2 py-1 text-xs font-medium text-muted-foreground uppercase tracking-wider flex justify-center">
               <div className="text-left text-xs">
                 Address
               </div>
             </div>
-            <div className="px-2 py-1 text-xs font-medium text-gray-500 uppercase tracking-wider flex justify-center">
+            <div className="px-2 py-1 text-xs font-medium text-muted-foreground uppercase tracking-wider flex justify-center">
               <div className="text-left text-xs">
                 Phone
               </div>
@@ -69,25 +69,25 @@ const MemberList: React.FC = () => {
           </div>
           
           {/* Content */}
-          <div className="bg-white divide-y divide-gray-200">
+          <div className="bg-card divide-y divide-border">
             {members.map((member) => (
-              <div key={member.id} className="grid grid-cols-4 hover:bg-gray-50">
-                <div className="py-1 whitespace-nowrap text-xs font-medium text-gray-900 flex justify-center">
+              <div key={member.id} className="grid grid-cols-4 hover:bg-muted/50">
+                <div className="py-1 whitespace-nowrap text-xs font-medium text-foreground flex justify-center">
                   <div className="text-left text-xs">
                     {member.name}
                   </div>
                 </div>
-                <div className="px-2 py-1 whitespace-nowrap text-xs text-gray-900 flex justify-center">
+                <div className="px-2 py-1 whitespace-nowrap text-xs text-foreground flex justify-center">
                   <div className="text-left text-xs">
                     {member.email}
                   </div>
                 </div>
-                <div className="px-2 py-1 whitespace-nowrap text-xs text-gray-900 flex justify-center">
+                <div className="px-2 py-1 whitespace-nowrap text-xs text-foreground flex justify-center">
                   <div className="text-left text-xs">
                     {member.address}
                   </div>
                 </div>
-                <div className="px-2 py-1 whitespace-nowrap text-xs text-gray-900 flex justify-center">
+                <div className="px-2 py-1 whitespace-nowrap text-xs text-foreground flex justify-center">
                   <div className="text-left text-xs">
                     {member.phone}
                   </div>
@@ -100,15 +100,15 @@ const MemberList: React.FC = () => {
 
       {/* Mobile Table - Names and Phones only */}
       <div className="md:hidden">
-        <div className="w-full border border-gray-200 rounded-lg overflow-hidden">
+        <div className="w-full border border-border rounded-lg overflow-hidden">
           {/* Header */}
-          <div className="bg-gray-50 grid grid-cols-2">
-            <div className="py-2 text-xs font-medium text-gray-500 uppercase tracking-wider flex justify-center">
+          <div className="bg-muted grid grid-cols-2">
+            <div className="py-2 text-xs font-medium text-muted-foreground uppercase tracking-wider flex justify-center">
               <div className="text-left text-xs">
                 Name
               </div>
             </div>
-            <div className="px-2 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider flex justify-center">
+            <div className="px-2 py-2 text-xs font-medium text-muted-foreground uppercase tracking-wider flex justify-center">
               <div className="text-left text-xs">
                 Phone
               </div>
@@ -116,15 +116,15 @@ const MemberList: React.FC = () => {
           </div>
           
           {/* Content */}
-          <div className="bg-white divide-y divide-gray-200">
+          <div className="bg-card divide-y divide-border">
             {members.map((member) => (
-              <div key={member.id} className="grid grid-cols-2 hover:bg-gray-50">
-                <div className="py-2 whitespace-nowrap text-xs font-medium text-gray-900 flex justify-center">
+              <div key={member.id} className="grid grid-cols-2 hover:bg-muted/50">
+                <div className="py-2 whitespace-nowrap text-xs font-medium text-foreground flex justify-center">
                   <div className="text-left text-xs">
                     {member.name}
                   </div>
                 </div>
-                <div className="px-2 py-2 text-xs text-gray-900 flex justify-center">
+                <div className="px-2 py-2 text-xs text-foreground flex justify-center">
                   <div className="text-left text-xs">
                     {member.phone}
                   </div>
@@ -140,7 +140,7 @@ const MemberList: React.FC = () => {
         onClick={exportToCSV}
         variant="outline"
         size="sm"
-        className="absolute top-2 right-2 h-8 w-8 p-0 bg-white border-gray-300 hover:bg-gray-50 shadow-sm"
+        className="absolute top-2 right-2 h-8 w-8 p-0 bg-card border-border hover:bg-muted shadow-sm"
       >
         <Download className="h-4 w-4" />
       </Button>
