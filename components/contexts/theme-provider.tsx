@@ -8,6 +8,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true);
+    // Force dark mode for static exports
+    document.documentElement.classList.add('dark');
+    document.documentElement.setAttribute('data-theme', 'dark');
   }, []);
 
   if (!mounted) {
@@ -18,6 +21,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     <NextThemeProvider
       attribute="class"
       defaultTheme="dark"
+      forcedTheme="dark"
       enableSystem={false}
     >
       {children}

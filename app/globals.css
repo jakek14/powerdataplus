@@ -349,5 +349,39 @@
 }
 
 .bg-radial-gradient {
-  background: radial-gradient(circle at center, var(--tw-gradient-stops));
+  background: radial-gradient(
+    circle at center,
+    var(--brand) 0%,
+    transparent 70%
+  );
+}
+
+/* Force dark mode for static exports */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: oklch(0.141 0.005 285.823) !important;
+  color: oklch(0.985 0 0) !important;
+}
+
+html.dark * {
+  border-color: oklch(0.885 0.006 286.033) !important;
+}
+
+html.dark .bg-background {
+  background-color: oklch(0.141 0.005 285.823) !important;
+}
+
+html.dark .bg-card {
+  background-color: oklch(0.141 0.005 285.823) !important;
+}
+
+html.dark .text-foreground {
+  color: oklch(0.985 0 0) !important;
+}
+
+html.dark .text-muted-foreground {
+  color: oklch(0.705 0.015 286.067) !important;
 }
