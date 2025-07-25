@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:github": "DEPLOYMENT_TYPE=github-pages next build",
+    "build:cloudways": "DEPLOYMENT_TYPE=cloudways next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build"
+    "export": "DEPLOYMENT_TYPE=github-pages next build"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",
