@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import DarkModeLogo from "../../logos/darkmode-logo";
+import LaunchUI from "../../logos/launch-ui";
 import {
   Footer,
   FooterBottom,
@@ -33,8 +33,8 @@ interface FooterProps {
 }
 
 export default function FooterSection({
-      logo = <DarkModeLogo />,
-      name = "DarkMode",
+  logo = <LaunchUI />,
+  name = "Launch UI",
   columns = [
     {
       title: "Product",

@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "DarkMode",
+  name: "Launch UI",
   url: "https://launchuicomponents.com",
   getStartedUrl:
     "https://launchuicomponents.com/docs/getting-started/introduction",
