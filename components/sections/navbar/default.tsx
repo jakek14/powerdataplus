@@ -57,7 +57,7 @@ export default function Navbar({
           <div className="flex justify-center w-full">
             <a
               href={homeUrl}
-              className="flex items-center gap-2 text-2xl font-bold scale-[175%]"
+              className="flex items-center gap-2 text-2xl font-bold scale-[175%] pt-2"
             >
               {logo}
               {name}

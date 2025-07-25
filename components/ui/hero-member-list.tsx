@@ -9,6 +9,7 @@ const members = [
     id: 1,
     name: "John Smith",
     email: "john@techcorp.com",
+    shortEmail: "john@tech.com",
     address: "123 Main St, SF, CA",
     phone: "+1 (555) 123-4567"
   },
@@ -16,6 +17,7 @@ const members = [
     id: 2,
     name: "Sarah Johnson",
     email: "sarah@design.com",
+    shortEmail: "sarah@design.com",
     address: "456 Oak Ave, NY, NY",
     phone: "+1 (555) 234-5678"
   },
@@ -23,6 +25,7 @@ const members = [
     id: 3,
     name: "Mike Wilson",
     email: "mike@marketing.com",
+    shortEmail: "mike@marketing.com",
     address: "789 Pine Rd, Austin, TX",
     phone: "+1 (555) 345-6789"
   },
@@ -30,6 +33,7 @@ const members = [
     id: 4,
     name: "Emily Davis",
     email: "emily@startup.com",
+    shortEmail: "emily@startup.com",
     address: "321 Elm Blvd, Seattle, WA",
     phone: "+1 (555) 456-7890"
   },
@@ -37,6 +41,7 @@ const members = [
     id: 5,
     name: "David Brown",
     email: "david@consulting.com",
+    shortEmail: "david@consult.com",
     address: "654 Maple Dr, Boston, MA",
     phone: "+1 (555) 567-8901"
   },
@@ -44,6 +49,7 @@ const members = [
     id: 6,
     name: "Lisa Garcia",
     email: "lisa@digital.com",
+    shortEmail: "lisa@digital.com",
     address: "987 Cedar Ln, Miami, FL",
     phone: "+1 (555) 678-9012"
   },
@@ -51,6 +57,7 @@ const members = [
     id: 7,
     name: "Alex Chen",
     email: "alex@innovate.com",
+    shortEmail: "alex@innovate.com",
     address: "147 Birch Way, Denver, CO",
     phone: "+1 (555) 789-0123"
   },
@@ -58,6 +65,7 @@ const members = [
     id: 8,
     name: "Maria Rodriguez",
     email: "maria@creative.com",
+    shortEmail: "maria@creative.com",
     address: "258 Spruce Ct, Portland, OR",
     phone: "+1 (555) 890-1234"
   },
@@ -65,6 +73,7 @@ const members = [
     id: 9,
     name: "James Wilson",
     email: "james@tech.com",
+    shortEmail: "james@tech.com",
     address: "369 Oak St, Chicago, IL",
     phone: "+1 (555) 901-2345"
   }
@@ -124,7 +133,7 @@ export function HeroMemberList() {
               Address
             </div>
             <div className="px-3 py-2 text-xs font-semibold text-[#1da84f]/70 uppercase tracking-wider">
-              Phone
+              Email
             </div>
           </div>
           
@@ -145,7 +154,7 @@ export function HeroMemberList() {
                   {member.address}
                 </div>
                 <div className="px-3 py-2 text-xs text-white/70">
-                  {member.phone}
+                  {member.shortEmail}
                 </div>
               </div>
             ))}

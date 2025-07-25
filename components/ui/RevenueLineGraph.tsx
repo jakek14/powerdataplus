@@ -194,21 +194,6 @@ const RevenueLineGraph: React.FC<RevenueLineGraphProps> = ({ selectedTimeFrame }
 
   return (
     <div className="px-4 sm:px-8 py-4 w-full max-w-full mx-auto overflow-hidden gap-0">
-      {/* Header */}
-      <motion.div 
-        className="flex flex-col items-start mb-0 w-full"
-        variants={headerVariants}
-      >
-        <div className="flex items-center gap-2 mb-1">
-          <div className="p-2 bg-primary/10 rounded-lg">
-            <DollarSign className="w-5 h-5 text-primary" />
-          </div>
-          <h2 className="text-xl font-bold text-foreground">Growing Revenue</h2>
-        </div>
-        
-        {/* Removed dropdown */}
-      </motion.div>
-
       {/* Stats Section */}
       <AnimatePresence mode="wait">
         <motion.div 

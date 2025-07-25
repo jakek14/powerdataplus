@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode } from "react";
 
 import { Badge } from "../../ui/badge";
@@ -5,6 +7,7 @@ import { Button, type ButtonProps } from "../../ui/button";
 import { HeroMemberList } from "../../ui/hero-member-list";
 import { Mockup, MockupFrame } from "../../ui/mockup";
 import { Section } from "../../ui/section";
+import { CyclingHyperText } from "../../ui/cycling-hyper-text";
 
 import { cn } from "@/lib/utils";
 
@@ -38,6 +41,12 @@ export default function Hero({
   ),
   className,
 }: HeroProps) {
+  const words = ["Sales", "Leads", "Revenue", "Buyers", "Users"];
+  
+  const titleParts = title.split("Sales");
+  const beforeSales = titleParts[0];
+  const afterSales = titleParts[1] || "";
+
   return (
     <Section
       className={cn(
@@ -53,13 +62,25 @@ export default function Hero({
       </div>
       
       <div className="max-w-container mx-auto flex flex-col gap-12 pt-16 sm:gap-24 relative z-10">
-        <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
-          {badge !== false && badge}
-          <h1 className="animate-appear from-foreground to-foreground dark:to-muted-foreground relative z-10 inline-block bg-linear-to-r bg-clip-text text-4xl leading-tight font-semibold text-balance text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-8xl md:leading-tight">
-            {title}
+        <div className="flex flex-col items-center gap-0 text-center">
+          {badge !== false && (
+            <div className="-mt-12 sm:-mt-16">
+              {badge}
+            </div>
+          )}
+          <h1 className="animate-appear from-foreground to-foreground dark:to-muted-foreground relative z-10 block bg-linear-to-r bg-clip-text text-4xl leading-tight font-semibold text-balance text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-8xl md:leading-tight text-center">
+            Turn Anonymous Visitors Into
           </h1>
-          <p className="text-md animate-appear text-muted-foreground relative z-10 max-w-[740px] font-medium text-balance opacity-0 delay-100 sm:text-xl">
-            {description}
+          <div className="text-center mb-8">
+            <CyclingHyperText
+              words={words}
+              className="text-4xl leading-tight font-semibold sm:text-6xl md:text-8xl text-[#1da84f]"
+              duration={1200}
+              cycleDuration={4000}
+            />
+          </div>
+          <p className="text-md animate-appear text-muted-foreground relative z-10 max-w-[740px] font-medium text-balance opacity-0 delay-100 sm:text-xl mb-8">
+            KnownVisitors identifies your anonymous website visitors even if they never filled out a form.
           </p>
           {/* Email Input and Waitlist Button */}
           <div className="animate-appear relative z-10 flex flex-col sm:flex-row gap-4 max-w-md w-full opacity-0 delay-300">

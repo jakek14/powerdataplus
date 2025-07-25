@@ -1,4 +1,7 @@
+"use client"
+
 import { ReactNode } from "react";
+import { motion } from "framer-motion";
 
 import Dashboard3D from "../../ui/3d-dashboard";
 import { GlowingEffect } from "../../ui/glowing-effect";
@@ -17,19 +20,55 @@ interface ItemsProps {
   className?: string;
 }
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8
+    }
+  }
+}
+
 export default function Items({
   title = "Transform Your Website Visitors Into Revenue",
   className,
 }: ItemsProps) {
   return (
     <Section className={className}>
-      <div className="max-w-container mx-auto flex flex-col items-center gap-6 sm:gap-8">
-        <h2 className="max-w-[800px] text-center text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
+      <motion.div 
+        className="max-w-container mx-auto flex flex-col items-center gap-6 sm:gap-8"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <motion.h2 
+          className="max-w-[800px] text-center text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight"
+          variants={itemVariants}
+        >
           {title}
-        </h2>
+        </motion.h2>
         
         {/* First Card - Text Left, Image Right */}
-        <div className="relative w-full max-w-6xl glass-3 hover:glass-4 rounded-2xl border border-border/70 dark:border-border/5 dark:border-t-border/15 bg-card p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] transform-gpu mt-16">
+        <motion.div 
+          className="relative w-full max-w-6xl glass-3 hover:glass-4 rounded-2xl border border-border/70 dark:border-border/5 dark:border-t-border/15 bg-card p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] transform-gpu mt-16"
+          variants={itemVariants}
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.3 }}
+        >
           <GlowingEffect
             blur={0}
             borderWidth={3}
@@ -47,34 +86,45 @@ export default function Items({
               <p className="text-muted-foreground text-lg leading-relaxed">
                 With a single pixel, knownvisitors.com reveals the full picture of your website traffic — surfacing both known customers and previously anonymous visitors as they arrive.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-[#1da84f]"></div>
-                  <span className="text-sm font-medium">Real-time visitor identification</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-[#1da84f]"></div>
-                  <span className="text-sm font-medium">No form submissions required</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-[#1da84f]"></div>
-                  <span className="text-sm font-medium">Instant lead generation</span>
-                </div>
-              </div>
             </div>
             <div className="flex-1 flex justify-center">
-              <div className="w-full max-w-md h-64 bg-gradient-to-br from-[#1da84f]/20 to-[#2dbb5f]/20 rounded-xl border border-[#1da84f]/30 flex items-center justify-center shadow-lg">
-                <div className="text-center">
-                  <div className="text-4xl mb-2">👥</div>
-                  <p className="text-[#1da84f] font-medium">Visitor Analytics Dashboard</p>
+              <div className="w-full max-w-sm bg-card/80 backdrop-blur-sm rounded-lg border border-[#1da84f]/30 p-4 shadow-lg">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-2 h-2 bg-[#1da84f] rounded-full animate-pulse"></div>
+                  <span className="text-xs text-[#1da84f] font-medium">LIVE VISITOR</span>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 bg-[#1da84f]/20 rounded-full flex items-center justify-center">
+                      <span className="text-[#1da84f] text-sm font-semibold">JS</span>
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-card-foreground">John Smith</p>
+                      <p className="text-xs text-muted-foreground">john.smith@techcorp.com</p>
+                    </div>
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    <span className="font-medium">Company:</span> TechCorp Inc.
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    <span className="font-medium">Role:</span> Senior Developer
+                  </div>
+                  <div className="text-xs text-[#1da84f] font-medium">
+                    Just visited your website
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Second Card - Image Left, Text Right */}
-        <div className="relative w-full max-w-6xl glass-3 hover:glass-4 rounded-2xl border border-border/70 dark:border-border/5 dark:border-t-border/15 bg-card p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] transform-gpu mt-16">
+        <motion.div 
+          className="relative w-full max-w-6xl glass-3 hover:glass-4 rounded-2xl border border-border/70 dark:border-border/5 dark:border-t-border/15 bg-card p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] transform-gpu mt-16"
+          variants={itemVariants}
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.3 }}
+        >
           <GlowingEffect
             blur={0}
             borderWidth={3}
@@ -99,28 +149,25 @@ export default function Items({
 
 Now you can identify these anonymous browsers and deliver 5x more personalized outreach — from emails and texts to push notifications.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-[#1da84f]"></div>
-                  <span className="text-sm font-medium">Company intelligence</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-[#1da84f]"></div>
-                  <span className="text-sm font-medium">Role-based targeting</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-[#1da84f]"></div>
-                  <span className="text-sm font-medium">Engagement scoring</span>
-                </div>
-              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
         
         {/* Third Card Container - Aligned Left */}
-        <div className="w-full max-w-6xl mx-auto flex flex-col lg:flex-row justify-start gap-8 mt-16">
+        <motion.div 
+          className="w-full max-w-6xl mx-auto flex flex-col lg:flex-row justify-start gap-8 mt-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {/* Third Card - Half Width */}
-          <div className="w-full lg:max-w-xl p-8 order-1 lg:order-1">
+          <motion.div 
+            className="w-full lg:max-w-xl p-8 order-1 lg:order-1"
+            variants={itemVariants}
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
             <div className="space-y-8 min-h-[400px] flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="space-y-3">
@@ -162,14 +209,19 @@ Now you can identify these anonymous browsers and deliver 5x more personalized o
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
           
           {/* 3D Dashboard Component - Positioned to the Right */}
-          <div className="w-full lg:max-w-2xl order-2 lg:order-2">
+          <motion.div 
+            className="w-full lg:max-w-2xl order-2 lg:order-2"
+            variants={itemVariants}
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
             <Dashboard3D />
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </Section>
   );
 }

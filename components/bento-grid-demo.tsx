@@ -105,6 +105,8 @@ const SkeletonTwo = () => {
     },
   };
   const arr = new Array(6).fill(0);
+  // Fixed width values to prevent hydration errors
+  const widthValues = [85, 65, 90, 45, 75, 60];
   return (
     <motion.div
       initial="initial"
@@ -117,7 +119,7 @@ const SkeletonTwo = () => {
           key={"skeleton-two" + i}
           variants={variants}
           style={{
-            maxWidth: Math.random() * (100 - 40) + 40 + "%",
+            maxWidth: widthValues[i] + "%",
           }}
           className="flex flex-row rounded-full border border-border/70 dark:border-border/5 p-2 items-center space-x-2 bg-muted w-full h-4"
         ></motion.div>
