@@ -18,9 +18,7 @@ const nextConfig = {
     },
     compress: true,
     poweredByHeader: false,
-    experimental: {
-      serverComponentsExternalPackages: []
-    }
+    serverExternalPackages: []
   })
 };
 

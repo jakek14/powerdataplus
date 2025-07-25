@@ -31,8 +31,9 @@ export function CyclingHyperText({
   animateOnLoad = true,
 }: CyclingHyperTextProps) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [displayText, setDisplayText] = useState(words[0].split("").map(() => alphabets[getRandomInt(26)]));
+  const [displayText, setDisplayText] = useState<string[]>([]);
   const [trigger, setTrigger] = useState(true);
+  const [isClient, setIsClient] = useState(false);
   const interations = useRef(0);
   const isFirstRender = useRef(true);
 
@@ -42,6 +43,12 @@ export function CyclingHyperText({
   };
 
   const currentWord = words[currentWordIndex];
+
+  // Ensure component only renders on client side
+  useEffect(() => {
+    setIsClient(true);
+    setDisplayText(words[0].split("").map(() => alphabets[getRandomInt(26)]));
+  }, [words]);
 
   // Initialize with first word animation
   useEffect(() => {
@@ -108,6 +115,17 @@ export function CyclingHyperText({
       triggerAnimation();
     }
   }, [currentWord]);
+
+  // Don't render anything until client-side hydration is complete
+  if (!isClient) {
+    return (
+      <div className="inline-flex scale-100 cursor-default overflow-hidden">
+        <span className={cn("font-mono", className)}>
+          {words[0]}
+        </span>
+      </div>
+    );
+  }
 
   return (
     <div

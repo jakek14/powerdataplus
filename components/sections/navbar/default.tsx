@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import DarkModeLogo from "../../logos/darkmode-logo";
+import LaunchUILogo from "../../logos/launch-ui";
 import { Button, type ButtonProps } from "../../ui/button";
 import {
   Navbar as NavbarComponent,
@@ -40,7 +40,7 @@ interface NavbarProps {
 }
 
 export default function Navbar({
-      logo = <DarkModeLogo />,
+      logo = <LaunchUILogo />,
       name = "",
   homeUrl = siteConfig.url,
   mobileLinks = [],
