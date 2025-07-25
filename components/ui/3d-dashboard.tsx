@@ -38,10 +38,10 @@ const Dashboard3D: React.FC = () => {
   }
 
   return (
-    <div className="relative w-full h-full max-w-md mx-auto">
+    <div className="relative w-full h-full max-w-lg mx-auto mt-8">
       {/* Remove radial gradient glow */}
       <div
-        className="relative w-full h-full bg-card rounded-xl border border-border/50 overflow-hidden"
+        className="relative w-full max-w-[480px] h-auto bg-card rounded-xl border border-border/50 overflow-hidden"
         style={{
           transform: isHovered 
             ? 'perspective(800px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)'
@@ -52,20 +52,20 @@ const Dashboard3D: React.FC = () => {
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Spotlight Effect - Reduced size and intensity */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[150px] h-[100px] bg-gradient-to-b from-[#1da84f]/10 via-[#1da84f]/3 to-transparent rounded-full blur-xl pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[180px] h-[120px] bg-gradient-to-b from-[#1da84f]/10 via-[#1da84f]/3 to-transparent rounded-full blur-xl pointer-events-none" />
         
         {/* Content */}
         <div className="relative p-4">
           {/* Header */}
           <div className="flex justify-between items-center mb-3">
-            <h3 className="text-base font-bold text-white tracking-wide">
+            <h3 className="text-lg font-bold text-white tracking-wide">
               Dashboard
             </h3>
             <Button
               onClick={exportToCSV}
               variant="outline"
               size="sm"
-              className="bg-black/30 border-[#1da84f]/20 text-[#1da84f] hover:bg-[#1da84f]/5 hover:border-[#1da84f]/30 transition-all duration-300 text-xs"
+              className="bg-black/30 border-[#1da84f]/20 text-[#1da84f] hover:bg-[#1da84f]/5 hover:border-[#1da84f]/30 transition-all duration-300 text-xs px-3 py-1"
             >
               <Download className="h-3 w-3 mr-1" />
               Export
@@ -76,10 +76,10 @@ const Dashboard3D: React.FC = () => {
           <div className="overflow-hidden rounded-lg border border-[#1da84f]/15">
             {/* Table Header */}
             <div className="bg-gradient-to-r from-[#1da84f]/15 to-[#1da84f]/5 grid grid-cols-2">
-              <div className="px-2 py-1 text-xs font-semibold text-[#1da84f] uppercase tracking-wider">
+              <div className="px-3 py-2 text-xs font-semibold text-[#1da84f] uppercase tracking-wider">
                 Name
               </div>
-              <div className="px-2 py-1 text-xs font-semibold text-[#1da84f] uppercase tracking-wider">
+              <div className="px-3 py-2 text-xs font-semibold text-[#1da84f] uppercase tracking-wider">
                 Phone
               </div>
             </div>
@@ -94,10 +94,10 @@ const Dashboard3D: React.FC = () => {
                     animationDelay: `${index * 30}ms`
                   }}
                 >
-                  <div className="px-2 py-1 text-xs text-white/90 font-medium">
+                  <div className="px-3 py-2 text-sm text-white/90 font-medium">
                     {member.name}
                   </div>
-                  <div className="px-2 py-1 text-xs text-white/70">
+                  <div className="px-3 py-2 text-sm text-white/70">
                     {member.phone}
                   </div>
                 </div>

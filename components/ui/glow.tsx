@@ -26,18 +26,34 @@ function Glow({
   return (
     <div
       data-slot="glow"
-      className={cn(glowVariants({ variant }), className)}
+      className={cn(glowVariants({ variant }), "glow-soft", className)}
       {...props}
     >
+      {/* Large ambient glow for seamless edges */}
       <div
         className={cn(
-          "from-[#1da84f]/15 to-[#1da84f]/0 absolute left-1/2 h-[128px] w-[40%] -translate-x-1/2 scale-[1.5] rounded-[50%] bg-radial from-10% to-60% opacity-5 sm:h-[256px] dark:opacity-25",
+          "from-[#1da84f]/8 to-transparent absolute left-1/2 h-[800px] w-[120%] -translate-x-1/2 scale-[1.05] rounded-[50%] bg-radial from-0% to-90% opacity-15 sm:h-[1000px] dark:opacity-25",
           variant === "center" && "-translate-y-1/2",
         )}
       />
+      {/* Soft primary glow with large fade */}
       <div
         className={cn(
-          "from-[#1da84f]/10 to-[#1da84f]/0 absolute left-1/2 h-[64px] w-[30%] -translate-x-1/2 scale-150 rounded-[50%] bg-radial from-10% to-60% opacity-5 sm:h-[128px] dark:opacity-25",
+          "from-[#1da84f]/25 to-transparent absolute left-1/2 h-[500px] w-[100%] -translate-x-1/2 scale-[1.1] rounded-[50%] bg-radial from-5% to-85% opacity-20 sm:h-[700px] dark:opacity-35",
+          variant === "center" && "-translate-y-1/2",
+        )}
+      />
+      {/* Medium glow for depth */}
+      <div
+        className={cn(
+          "from-[#1da84f]/20 to-transparent absolute left-1/2 h-[300px] w-[80%] -translate-x-1/2 scale-[1.3] rounded-[50%] bg-radial from-10% to-75% opacity-18 sm:h-[450px] dark:opacity-30",
+          variant === "center" && "-translate-y-1/2",
+        )}
+      />
+      {/* Subtle center highlight */}
+      <div
+        className={cn(
+          "from-[#1da84f]/15 to-transparent absolute left-1/2 h-[150px] w-[50%] -translate-x-1/2 scale-[1.5] rounded-[50%] bg-radial from-20% to-60% opacity-15 sm:h-[250px] dark:opacity-25",
           variant === "center" && "-translate-y-1/2",
         )}
       />

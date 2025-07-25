@@ -42,11 +42,18 @@ export default function Hero({
   return (
     <Section
       className={cn(
-        "fade-bottom overflow-hidden pb-0 sm:pb-0 md:pb-0",
+        "fade-bottom overflow-hidden pb-0 sm:pb-0 md:pb-0 relative",
         className,
       )}
     >
-      <div className="max-w-container mx-auto flex flex-col gap-12 pt-16 sm:gap-24">
+      {/* Ambient Background Glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-gradient-radial from-[#1da84f]/8 via-[#1da84f]/4 to-transparent rounded-full blur-3xl opacity-60" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-radial from-[#1da84f]/6 via-[#1da84f]/3 to-transparent rounded-full blur-2xl opacity-50" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-radial from-[#1da84f]/4 via-[#1da84f]/2 to-transparent rounded-full blur-xl opacity-40" />
+      </div>
+      
+      <div className="max-w-container mx-auto flex flex-col gap-12 pt-16 sm:gap-24 relative z-10">
         <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
           {badge !== false && badge}
           <h1 className="animate-appear from-foreground to-foreground dark:to-muted-foreground relative z-10 inline-block bg-linear-to-r bg-clip-text text-4xl leading-tight font-semibold text-balance text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-8xl md:leading-tight">
@@ -83,10 +90,12 @@ export default function Hero({
                   {mockup}
                 </Mockup>
               </MockupFrame>
-              <Glow
-                variant="top"
-                className="animate-appear-zoom opacity-0 delay-1000"
-              />
+              {/* Enhanced Radial Glow behind image */}
+              <div className="absolute inset-0 pointer-events-none animate-appear-zoom opacity-0 delay-1000">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1600px] h-[1000px] bg-gradient-radial from-[#1da84f]/15 via-[#1da84f]/8 to-transparent rounded-full blur-3xl opacity-80" />
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-gradient-radial from-[#1da84f]/12 via-[#1da84f]/6 to-transparent rounded-full blur-2xl opacity-70" />
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-radial from-[#1da84f]/10 via-[#1da84f]/4 to-transparent rounded-full blur-xl opacity-60" />
+              </div>
             </div>
           )}
         </div>

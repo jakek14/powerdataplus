@@ -351,6 +351,21 @@
     var(--tw-gradient-from),
     var(--tw-gradient-to)
   );
+  filter: blur(0.5px);
+}
+
+.bg-gradient-radial {
+  background: radial-gradient(
+    circle at center,
+    var(--tw-gradient-from),
+    var(--tw-gradient-via),
+    var(--tw-gradient-to)
+  );
+}
+
+/* Additional soft glow enhancement */
+.glow-soft {
+  filter: blur(1px) brightness(1.1);
 }
 
 /* Force dark mode for static exports */
