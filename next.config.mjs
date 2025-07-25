@@ -6,9 +6,6 @@ const nextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '/darkmodeknownvisitors' : '',
   images: {
     unoptimized: true
-  },
-  experimental: {
-    optimizeCss: true
   }
 };
 
