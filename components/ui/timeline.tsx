@@ -42,13 +42,36 @@ export function Timeline() {
   useEffect(() => {
     const container = scrollContainerRef.current
     if (!container) return
+    
+    let isUserScrolling = false
+    let isPageScrolling = false
+    let scrollTimeout: NodeJS.Timeout | null = null
+    let pageScrollTimeout: NodeJS.Timeout | null = null
+    
+    const handlePageScroll = () => {
+      isPageScrolling = true
+      if (pageScrollTimeout) clearTimeout(pageScrollTimeout)
+      pageScrollTimeout = setTimeout(() => {
+        isPageScrolling = false
+      }, 500)
+    }
+    
     const handleScroll = () => {
-      if (scrollTimeout.current) clearTimeout(scrollTimeout.current)
-      scrollTimeout.current = setTimeout(() => {
+      isUserScrolling = true
+      
+      if (scrollTimeout) clearTimeout(scrollTimeout)
+      scrollTimeout = setTimeout(() => {
+        // Don't auto-center if user is scrolling the page
+        if (isPageScrolling) return
+        
+        // Only auto-center if user has stopped scrolling for a longer period
+        if (!isUserScrolling) return
+        
         // Find the card closest to the center
         const containerRect = container.getBoundingClientRect()
         let minDist = Infinity
         let closestIdx = 0
+        
         cardRefs.current.forEach((card, idx) => {
           if (!card) return
           const cardRect = card.getBoundingClientRect()
@@ -60,13 +83,30 @@ export function Timeline() {
             closestIdx = idx
           }
         })
-        // Center the closest card
-        cardRefs.current[closestIdx]?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
-        setCurrentStep(closestIdx)
-      }, 100)
+        
+        // Only auto-center if significantly off-center (more than 50px)
+        if (minDist > 50) {
+          cardRefs.current[closestIdx]?.scrollIntoView({ 
+            behavior: 'smooth', 
+            inline: 'center', 
+            block: 'nearest' 
+          })
+          setCurrentStep(closestIdx)
+        }
+        
+        isUserScrolling = false
+      }, 300) // Increased timeout to be less aggressive
     }
-    container.addEventListener('scroll', handleScroll)
-    return () => container.removeEventListener('scroll', handleScroll)
+    
+    container.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('scroll', handlePageScroll, { passive: true })
+    
+    return () => {
+      container.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('scroll', handlePageScroll)
+      if (scrollTimeout) clearTimeout(scrollTimeout)
+      if (pageScrollTimeout) clearTimeout(pageScrollTimeout)
+    }
   }, [])
 
   const scrollToStep = (stepIndex: number) => {
@@ -130,7 +170,10 @@ export function Timeline() {
 
         {/* Mobile Horizontal Scroll Layout */}
         <div className="lg:hidden">
-          <div className="flex overflow-x-auto gap-4 pb-2 scrollbar-hide min-w-0" ref={scrollContainerRef}>
+          <div 
+            className="flex overflow-x-auto gap-4 pb-2 scrollbar-hide min-w-0 touch-pan-x" 
+            ref={scrollContainerRef}
+          >
             {steps.map((step) => (
               <div
                 key={step.number}
