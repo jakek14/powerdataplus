@@ -345,14 +345,6 @@
   display: none;  /* Safari and Chrome */
 }
 
-.bg-radial-gradient {
-  background: radial-gradient(
-    circle at center,
-    var(--brand) 0%,
-    transparent 70%
-  );
-}
-
 /* Force dark mode for static exports */
 html.dark {
   color-scheme: dark;
