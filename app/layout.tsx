@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
   },
-  metadataBase: new URL(siteConfig.getStartedUrl),
+  metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://jakek14.github.io/darkmodeknownvisitors' : 'http://localhost:3000'),
   description: siteConfig.description,
   keywords: [
     "Landing page template",
