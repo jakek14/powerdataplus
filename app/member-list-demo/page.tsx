@@ -1,4 +1,3 @@
-import React from 'react';
 import MemberList from '@/components/ui/member-list';
 
 export default function MemberListDemo() {

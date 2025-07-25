@@ -1,18 +1,13 @@
 "use client";
-import { cn } from "@/lib/utils";
-import React from "react";
+
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+import { cn } from "@/lib/utils";
 import {
-  IconBoxAlignRightFilled,
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
-  IconEye,
-  IconUsers,
-  IconChartBar,
-  IconTarget,
   IconBrain,
+  IconChartBar,
+  IconEye,
+  IconTarget,
+  IconUsers,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 
@@ -290,9 +285,9 @@ const items = [
   {
     title: "Your Hidden Funnel Just Got Exposed",
     description: (
-      <span className="text-sm">
-        You're only seeing a fraction of your funnel. KnownVisitors uncovers who's actually moving through it.
-      </span>
+              <span className="text-sm">
+          You&apos;re only seeing a fraction of your funnel. KnownVisitors uncovers who&apos;s actually moving through it.
+        </span>
     ),
     header: <SkeletonOne />,
     className: "md:col-span-1",

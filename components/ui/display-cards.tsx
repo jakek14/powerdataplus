@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import type { LucideIcon } from "lucide-react";
+import { useState } from "react";
 
 export interface DisplayCardProps {
   icon: React.ReactNode;

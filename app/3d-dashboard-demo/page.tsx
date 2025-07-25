@@ -1,4 +1,3 @@
-import React from 'react';
 import Dashboard3D from '@/components/ui/3d-dashboard';
 
 export default function Dashboard3DDemo() {

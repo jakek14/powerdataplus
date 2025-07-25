@@ -1,20 +1,9 @@
-import {
-  BlocksIcon,
-  EclipseIcon,
-  FastForwardIcon,
-  LanguagesIcon,
-  MonitorSmartphoneIcon,
-  RocketIcon,
-  ScanFaceIcon,
-  SquarePenIcon,
-} from "lucide-react";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
-import { Item, ItemDescription,ItemIcon, ItemTitle } from "../../ui/item";
-import { Section } from "../../ui/section";
-import { GlowingEffect } from "../../ui/glowing-effect";
 import Dashboard3D from "../../ui/3d-dashboard";
+import { GlowingEffect } from "../../ui/glowing-effect";
 import RevenueLineGraph from "../../ui/RevenueLineGraph";
+import { Section } from "../../ui/section";
 
 interface ItemProps {
   title: string;

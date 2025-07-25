@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { TrendingUp, TrendingDown, DollarSign } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { DollarSign, TrendingDown, TrendingUp } from 'lucide-react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 interface RevenueDataPoint {
   month: string;

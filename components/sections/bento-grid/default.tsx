@@ -1,8 +1,5 @@
-import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
-
-import { Section } from "../../ui/section";
 import BentoGridDemo from "../../bento-grid-demo";
+import { Section } from "../../ui/section";
 
 interface BentoGridSectionProps {
   title?: string;

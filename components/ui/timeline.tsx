@@ -98,7 +98,7 @@ export function Timeline() {
             {/* Pulsing Wave Animation */}
             <div className="absolute top-0 left-0 w-24 h-1 bg-gradient-to-r from-transparent via-[#1da84f] to-transparent animate-wave-pulse" />
           </div>
-          {steps.map((step, index) => (
+          {steps.map((step) => (
             <div key={step.number} className="flex flex-col items-center">
               {/* Timeline Step */}
               <div className="relative flex flex-col items-center w-full h-full">
@@ -131,10 +131,10 @@ export function Timeline() {
         {/* Mobile Horizontal Scroll Layout */}
         <div className="lg:hidden">
           <div className="flex overflow-x-auto gap-4 pb-2 scrollbar-hide min-w-0" ref={scrollContainerRef}>
-            {steps.map((step, index) => (
+            {steps.map((step) => (
               <div
                 key={step.number}
-                ref={el => { cardRefs.current[index] = el; }}
+                ref={el => { cardRefs.current[step.number - 1] = el; }}
                 className="flex flex-col items-center w-[90vw] max-w-xs flex-shrink-0"
               >
                 {/* Timeline Step */}

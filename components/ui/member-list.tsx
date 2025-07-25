@@ -1,8 +1,7 @@
 'use client'
 
-import React from 'react'
-import { Download } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Download } from 'lucide-react'
 
 const MemberList: React.FC = () => {
   const members = [

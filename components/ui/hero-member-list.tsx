@@ -129,7 +129,7 @@ export function HeroMemberList() {
           
           {/* Table Content */}
           <div className="bg-black/30 divide-y divide-[#1da84f]/5">
-            {members.map((member, index) => (
+            {members.map((member) => (
               <div 
                 key={member.id} 
                 className="grid grid-cols-2 lg:grid-cols-4 hover:bg-[#1da84f]/3 transition-all duration-200"
