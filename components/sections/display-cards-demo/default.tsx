@@ -1,5 +1,6 @@
-import { DisplayCards } from "@/components/ui/display-cards";
 import { Target, TrendingUp, Users, Zap } from "lucide-react";
+
+import { DisplayCards } from "@/components/ui/display-cards";
 
 const sampleCards = [
   {

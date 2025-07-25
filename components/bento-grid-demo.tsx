@@ -1,7 +1,6 @@
 "use client";
 
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import { cn } from "@/lib/utils";
 import {
   IconBrain,
   IconChartBar,
@@ -10,6 +9,8 @@ import {
   IconUsers,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
+
+import { cn } from "@/lib/utils";
 
 export default function BentoGridDemo() {
   return (

@@ -19,7 +19,6 @@ interface ItemsProps {
 
 export default function Items({
   title = "Transform Your Website Visitors Into Revenue",
-  items: _items = false,
   className,
 }: ItemsProps) {
   return (

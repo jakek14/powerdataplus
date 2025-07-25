@@ -6,6 +6,7 @@ import Glow from "../../ui/glow";
 import { HeroMemberList } from "../../ui/hero-member-list";
 import { Mockup, MockupFrame } from "../../ui/mockup";
 import { Section } from "../../ui/section";
+
 import { cn } from "@/lib/utils";
 
 interface HeroButtonProps {
@@ -36,7 +37,6 @@ export default function Hero({
       </span>
     </Badge>
   ),
-  buttons: _buttons = false,
   className,
 }: HeroProps) {
   return (
