@@ -117,7 +117,7 @@ export function Timeline() {
                     {step.title}
                   </h3>
                   {/* Consistent Height Card */}
-                  <div className="flex-1 bg-card/5 backdrop-blur-md rounded-xl border border-border/10 p-6 shadow-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl group min-h-[120px] flex items-center justify-center">
+                  <div className="flex-1 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-6 shadow-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl group min-h-[120px] flex items-center justify-center">
                     <p className="text-neutral-300 text-sm leading-relaxed text-center">
                       {step.description}
                     </p>
@@ -154,7 +154,7 @@ export function Timeline() {
                       {step.title}
                     </h3>
                     {/* Consistent Height Card */}
-                    <div className="flex-1 bg-card/5 backdrop-blur-md rounded-xl border border-border/10 p-3 shadow-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl group min-h-[120px] flex items-center justify-center">
+                    <div className="flex-1 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-3 shadow-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl group min-h-[120px] flex items-center justify-center">
                       <p className="text-neutral-300 text-base leading-relaxed text-center px-2 whitespace-normal break-words">
                         {step.description}
                       </p>

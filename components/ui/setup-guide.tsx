@@ -69,7 +69,7 @@ export function SetupGuide() {
                 </h3>
                 
                 {/* Frosted Glass Card */}
-                <div className="bg-card/20 backdrop-blur-md rounded-lg shadow-lg p-6 border border-border/30 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+                <div className="bg-white/20 backdrop-blur-md rounded-lg shadow-lg p-6 border border-white/30 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
                   <p className="text-gray-700 text-sm leading-relaxed text-center">
                     {step.description}
                   </p>
