@@ -1,6 +1,5 @@
-import React from "react";
 import { DisplayCards } from "@/components/ui/display-cards";
-import { Users, TrendingUp, Target, Zap } from "lucide-react";
+import { Target, TrendingUp, Users, Zap } from "lucide-react";
 
 const sampleCards = [
   {
@@ -42,7 +41,7 @@ export default function DisplayCardsDemo() {
             Real-time Visitor Activity
           </h2>
           <p className="text-muted-foreground text-lg">
-            See who's visiting your site right now
+            See who&apos;s visiting your site right now
           </p>
         </div>
         <div className="flex justify-center">

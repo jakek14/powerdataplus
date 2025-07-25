@@ -36,7 +36,7 @@ export default function Hero({
       </span>
     </Badge>
   ),
-  buttons = false,
+  buttons: _buttons = false,
   className,
 }: HeroProps) {
   return (

@@ -19,7 +19,7 @@ interface ItemsProps {
 
 export default function Items({
   title = "Transform Your Website Visitors Into Revenue",
-  items = false,
+  items: _items = false,
   className,
 }: ItemsProps) {
   return (
@@ -129,7 +129,7 @@ Now you can identify these anonymous browsers and deliver 5x more personalized o
                     Data you can act on, instantly
                   </h3>
                   <p className="text-muted-foreground text-lg leading-relaxed">
-                    Your dashboard shouldn't just display numbers — it should unlock insight.
+                    Your dashboard shouldn&apos;t just display numbers — it should unlock insight.
                   </p>
                 </div>
                 
