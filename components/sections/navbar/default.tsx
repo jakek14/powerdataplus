@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import LaunchUI from "../../logos/launch-ui";
+import DarkModeLogo from "../../logos/darkmode-logo";
 import { Button, type ButtonProps } from "../../ui/button";
 import {
   Navbar as NavbarComponent,
@@ -40,24 +40,12 @@ interface NavbarProps {
 }
 
 export default function Navbar({
-  logo = <LaunchUI />,
-  name = "Launch UI",
+      logo = <DarkModeLogo />,
+      name = "",
   homeUrl = siteConfig.url,
-  mobileLinks = [
-    { text: "Getting Started", href: siteConfig.url },
-    { text: "Components", href: siteConfig.url },
-    { text: "Documentation", href: siteConfig.url },
-  ],
-  actions = [
-    { text: "Sign in", href: siteConfig.url, isButton: false },
-    {
-      text: "Get Started",
-      href: siteConfig.url,
-      isButton: true,
-      variant: "default",
-    },
-  ],
-  showNavigation = true,
+  mobileLinks = [],
+  actions = [],
+  showNavigation = false,
   customNavigation,
   className,
 }: NavbarProps) {
@@ -66,14 +54,16 @@ export default function Navbar({
       <div className="fade-bottom bg-background/15 absolute left-0 h-24 w-full backdrop-blur-lg"></div>
       <div className="max-w-container relative mx-auto">
         <NavbarComponent>
-          <NavbarLeft>
+          <div className="flex justify-center w-full">
             <a
               href={homeUrl}
-              className="flex items-center gap-2 text-xl font-bold"
+              className="flex items-center gap-2 text-2xl font-bold scale-[175%]"
             >
               {logo}
               {name}
             </a>
+          </div>
+          <NavbarLeft>
             {showNavigation && (customNavigation || <Navigation />)}
           </NavbarLeft>
           <NavbarRight>

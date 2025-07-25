@@ -37,13 +37,13 @@ export default function FAQ({
             the difference between success and failure.
           </p>
           <p className="text-muted-foreground mb-4 max-w-[640px] text-balance">
-            Launch UI helps you ship faster without compromising on quality.
+            DarkMode helps you ship faster without compromising on quality.
           </p>
         </>
       ),
     },
     {
-      question: "Why use Launch UI instead of a no-code tool?",
+      question: "Why use DarkMode instead of a no-code tool?",
       answer: (
         <>
           <p className="text-muted-foreground mb-4 max-w-[600px]">
@@ -58,7 +58,7 @@ export default function FAQ({
           <p className="text-muted-foreground mb-4 max-w-[600px]">
             What might seem like a convenient solution today could paint you
             into a corner tomorrow, limiting your ability to scale and adapt.
-            Launch UI gives you full control of your code while maintaining
+            DarkMode gives you full control of your code while maintaining
             professional quality.
           </p>
         </>
@@ -66,11 +66,11 @@ export default function FAQ({
     },
     {
       question:
-        "How Launch UI is different from other components libraries and templates?",
+        "How DarkMode is different from other components libraries and templates?",
       answer: (
         <>
           <p className="text-muted-foreground mb-4 max-w-[580px]">
-            Launch UI stands out with premium design quality and delightful
+            DarkMode stands out with premium design quality and delightful
             touches of custom animations and illustrations.
           </p>
           <p className="text-muted-foreground mb-4 max-w-[580px]">
@@ -79,7 +79,7 @@ export default function FAQ({
           </p>
           <p className="text-muted-foreground mb-4 max-w-[640px] text-balance">
             Unlike many libraries that rely on outdated CSS practices and old
-            dependencies, Launch UI is built with modern technologies and best
+            dependencies, DarkMode is built with modern technologies and best
             practices in mind.
           </p>
         </>
@@ -90,7 +90,7 @@ export default function FAQ({
       answer: (
         <>
           <p className="text-muted-foreground mb-4 max-w-[580px]">
-            The basic version of Launch UI is open-source and free forever,
+            The basic version of DarkMode is open-source and free forever,
             under a do-whatever-you-want license.
           </p>
           <p className="text-muted-foreground mb-4 max-w-[580px]">
@@ -113,7 +113,7 @@ export default function FAQ({
       question: "Are Figma files included?",
       answer: (
         <p className="text-muted-foreground mb-4 max-w-[580px]">
-          Yes! The complete Launch UI template is available for free on the{" "}
+          Yes! The complete DarkMode template is available for free on the{" "}
           <Link
             href="https://www.figma.com/community/file/1420131743903900629/launch-ui-landing-page-components-ui-kit"
             className="text-foreground underline"

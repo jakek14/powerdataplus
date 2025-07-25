@@ -11,6 +11,7 @@ import Glow from "../../ui/glow";
 import { Mockup, MockupFrame } from "../../ui/mockup";
 import Screenshot from "../../ui/screenshot";
 import { Section } from "../../ui/section";
+import { HeroMemberList } from "../../ui/hero-member-list";
 
 interface HeroButtonProps {
   href: string;
@@ -30,42 +31,17 @@ interface HeroProps {
 }
 
 export default function Hero({
-  title = "Give your big idea the design it deserves",
-  description = "Professionally designed blocks and templates built with React, Shadcn/ui and Tailwind that will help your product stand out.",
-  mockup = (
-    <Screenshot
-      srcLight="/app-light.png"
-      srcDark="/app-dark.png"
-      alt="Launch UI app screenshot"
-      width={1248}
-      height={765}
-      className="w-full"
-    />
-  ),
+  title = "Turn Anonymous Visitors Into Sales",
+  description = "KnownVisitors identifies your anonymous website visitors even if they never filled out a form. Transform lost traffic into actionable contact data.",
+  mockup = <HeroMemberList />,
   badge = (
     <Badge variant="outline" className="animate-appear">
       <span className="text-muted-foreground">
-        New version of Launch UI is out!
+        New version of KnownVisitors is out!
       </span>
-      <a href={siteConfig.getStartedUrl} className="flex items-center gap-1">
-        Get started
-        <ArrowRightIcon className="size-3" />
-      </a>
     </Badge>
   ),
-  buttons = [
-    {
-      href: siteConfig.getStartedUrl,
-      text: "Get Started",
-      variant: "default",
-    },
-    {
-      href: siteConfig.links.github,
-      text: "Github",
-      variant: "glow",
-      icon: <Github className="mr-2 size-4" />,
-    },
-  ],
+  buttons = false,
   className,
 }: HeroProps) {
   return (
@@ -84,24 +60,21 @@ export default function Hero({
           <p className="text-md animate-appear text-muted-foreground relative z-10 max-w-[740px] font-medium text-balance opacity-0 delay-100 sm:text-xl">
             {description}
           </p>
-          {buttons !== false && buttons.length > 0 && (
-            <div className="animate-appear relative z-10 flex justify-center gap-4 opacity-0 delay-300">
-              {buttons.map((button, index) => (
-                <Button
-                  key={index}
-                  variant={button.variant || "default"}
-                  size="lg"
-                  asChild
-                >
-                  <a href={button.href}>
-                    {button.icon}
-                    {button.text}
-                    {button.iconRight}
-                  </a>
-                </Button>
-              ))}
-            </div>
-          )}
+          {/* Email Input and Waitlist Button */}
+          <div className="animate-appear relative z-10 flex flex-col sm:flex-row gap-4 max-w-md w-full opacity-0 delay-300">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-3 bg-background/50 border border-border/50 rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#1da84f]/50 focus:border-[#1da84f] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#1da84f]/20"
+            />
+            <Button
+              variant="default"
+              size="lg"
+              className="bg-[#1da84f] hover:bg-[#1da84f]/90 text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#1da84f]/30 transform"
+            >
+              Join the Waitlist
+            </Button>
+          </div>
           {mockup !== false && (
             <div className="relative w-full pt-12">
               <MockupFrame
