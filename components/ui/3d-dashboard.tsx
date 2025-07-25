@@ -39,11 +39,11 @@ const Dashboard3D: React.FC = () => {
 
   return (
     <div className="relative w-full h-full">
-      {/* Radial Green Glow Background */}
-      <div className="absolute inset-0 bg-radial-gradient from-[#1da84f]/10 via-transparent to-transparent pointer-events-none" />
+      {/* Radial Green Glow Background - Reduced intensity */}
+      <div className="absolute inset-0 bg-radial-gradient from-[#1da84f]/5 via-transparent to-transparent pointer-events-none" />
       
-      {/* Spotlight Effect */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] bg-gradient-to-b from-[#1da84f]/20 via-[#1da84f]/5 to-transparent rounded-full blur-2xl pointer-events-none" />
+      {/* Spotlight Effect - Reduced size and intensity */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[200px] h-[150px] bg-gradient-to-b from-[#1da84f]/10 via-[#1da84f]/3 to-transparent rounded-full blur-xl pointer-events-none" />
       
       {/* Main Dashboard Container */}
       <div className="relative z-10 flex items-center justify-center w-full h-full">
@@ -57,13 +57,13 @@ const Dashboard3D: React.FC = () => {
                 transform: isHovered 
                   ? 'perspective(800px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)'
                   : 'perspective(800px) rotateX(8deg) rotateY(-3deg) rotateZ(1deg)',
-                boxShadow: '0 15px 35px -8px rgba(29, 168, 79, 0.2), 0 0 0 1px rgba(29, 168, 79, 0.05)'
+                boxShadow: '0 15px 35px -8px rgba(29, 168, 79, 0.1), 0 0 0 1px rgba(29, 168, 79, 0.05)'
               }}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#1da84f]/5 via-transparent to-[#1da84f]/5 rounded-xl blur-sm" />
+              {/* Glow Effect - Reduced intensity */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#1da84f]/3 via-transparent to-[#1da84f]/3 rounded-xl blur-sm" />
               
               {/* Content */}
               <div className="relative p-3">

@@ -89,8 +89,8 @@ const exportToCSV = () => {
 export function HeroMemberList() {
   return (
     <div className="relative w-full h-full bg-black/40 backdrop-blur-md border border-[#1da84f]/20 rounded-xl shadow-xl">
-      {/* Glow Effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1da84f]/5 via-transparent to-[#1da84f]/5 rounded-xl blur-sm" />
+      {/* Glow Effect - Reduced intensity */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1da84f]/3 via-transparent to-[#1da84f]/3 rounded-xl blur-sm" />
       
       {/* Content */}
       <div className="relative p-4">
