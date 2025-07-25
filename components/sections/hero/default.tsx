@@ -42,10 +42,6 @@ export default function Hero({
   className,
 }: HeroProps) {
   const words = ["Sales", "Leads", "Revenue", "Buyers", "Users"];
-  
-  const titleParts = title.split("Sales");
-  const beforeSales = titleParts[0];
-  const afterSales = titleParts[1] || "";
 
   return (
     <Section

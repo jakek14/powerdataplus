@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { DollarSign, TrendingDown, TrendingUp } from 'lucide-react';
+import { TrendingDown, TrendingUp } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 interface RevenueDataPoint {
@@ -159,15 +159,6 @@ const RevenueLineGraph: React.FC<RevenueLineGraphProps> = ({ selectedTimeFrame }
   }, [linePath, animationKey]);
 
 
-
-  const headerVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: { duration: 0.5 }
-    }
-  };
 
   const statsVariants = {
     hidden: { opacity: 0, scale: 0.9 },
