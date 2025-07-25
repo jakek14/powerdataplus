@@ -29,8 +29,6 @@ interface HeroProps {
 }
 
 export default function Hero({
-  title = "Turn Anonymous Visitors Into Sales",
-  description = "KnownVisitors identifies your anonymous website visitors even if they never filled out a form. Transform lost traffic into actionable contact data.",
   mockup = <HeroMemberList />,
   badge = (
     <Badge variant="outline" className="animate-appear">
