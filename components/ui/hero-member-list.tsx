@@ -76,7 +76,16 @@ const members = [
     shortEmail: "james@tech.com",
     address: "369 Oak St, Chicago, IL",
     phone: "+1 (555) 901-2345"
-  }
+  },
+  {
+    id: 10,
+    name: "Christopher Lee",
+    email: "chris@venture.com",
+    shortEmail: "chris@venture.com",
+    address: "852 Oak Ridge, Atlanta, GA",
+    phone: "+1 (555) 123-4567"
+  },
+
 ]
 
 const exportToCSV = () => {
@@ -97,24 +106,24 @@ const exportToCSV = () => {
 
 export function HeroMemberList() {
   return (
-    <div className="relative w-full h-full bg-black/60 backdrop-blur-md border border-[#1da84f]/30 rounded-xl shadow-xl">
-      {/* Glow Effect - Reduced intensity */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1da84f]/5 via-transparent to-[#1da84f]/5 rounded-xl blur-sm" />
+    <div className="relative w-full h-full bg-black/60 backdrop-blur-md border border-[#1da84f]/30 rounded-xl shadow-lg">
+      {/* Minimal glow effect - only at bottom */}
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[200px] h-[40px] bg-gradient-to-t from-[#1da84f]/6 via-[#1da84f]/2 to-transparent rounded-full blur-md pointer-events-none" />
       
       {/* Content */}
       <div className="relative p-4">
         {/* Header */}
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-xl font-bold text-white tracking-wide drop-shadow-sm">
+          <h3 className="text-xl md:text-2xl font-bold text-white tracking-wide">
             Dashboard
           </h3>
           <Button
             onClick={exportToCSV}
             variant="outline"
             size="sm"
-            className="bg-black/40 border-[#1da84f]/30 text-[#1da84f] hover:bg-[#1da84f]/10 hover:border-[#1da84f]/40 transition-all duration-300 text-xs"
+            className="bg-black/40 border-[#1da84f]/30 text-[#1da84f] hover:bg-[#1da84f]/10 hover:border-[#1da84f]/40 transition-all duration-300 text-xs md:text-sm"
           >
-            <Download className="h-3 w-3 mr-1" />
+            <Download className="h-3 w-3 md:h-4 md:w-4 mr-1" />
             Export
           </Button>
         </div>
@@ -123,16 +132,16 @@ export function HeroMemberList() {
         <div className="overflow-hidden rounded-lg border border-[#1da84f]/20">
           {/* Table Header */}
           <div className="bg-gradient-to-r from-[#1da84f]/20 to-[#1da84f]/10 grid grid-cols-2 lg:grid-cols-4">
-            <div className="px-3 py-2 text-sm font-semibold text-[#1da84f] uppercase tracking-wider drop-shadow-sm">
+            <div className="px-3 py-2 md:px-4 md:py-3 text-sm md:text-base font-semibold text-[#1da84f] uppercase tracking-wider">
               Name
             </div>
-            <div className="px-3 py-2 text-sm font-semibold text-[#1da84f] uppercase tracking-wider lg:block hidden drop-shadow-sm">
+            <div className="px-3 py-2 md:px-4 md:py-3 text-sm md:text-base font-semibold text-[#1da84f] uppercase tracking-wider lg:block hidden">
               Email
             </div>
-            <div className="px-3 py-2 text-sm font-semibold text-[#1da84f] uppercase tracking-wider lg:block hidden drop-shadow-sm">
+            <div className="px-3 py-2 md:px-4 md:py-3 text-sm md:text-base font-semibold text-[#1da84f] uppercase tracking-wider lg:block hidden">
               Address
             </div>
-            <div className="px-3 py-2 text-sm font-semibold text-[#1da84f] uppercase tracking-wider drop-shadow-sm">
+            <div className="px-3 py-2 md:px-4 md:py-3 text-sm md:text-base font-semibold text-[#1da84f] uppercase tracking-wider">
               Phone
             </div>
           </div>
@@ -144,16 +153,16 @@ export function HeroMemberList() {
                 key={member.id} 
                 className="grid grid-cols-2 lg:grid-cols-4 hover:bg-[#1da84f]/5 transition-all duration-200"
               >
-                <div className="px-3 py-2 text-sm text-white font-semibold drop-shadow-sm truncate">
+                <div className="px-3 py-2 md:px-4 md:py-3 text-sm md:text-lg text-white font-semibold truncate">
                   {member.name}
                 </div>
-                <div className="px-3 py-2 text-sm text-white/95 lg:block hidden drop-shadow-sm truncate">
+                <div className="px-3 py-2 md:px-4 md:py-3 text-sm md:text-lg text-white/95 lg:block hidden truncate">
                   {member.email}
                 </div>
-                <div className="px-3 py-2 text-sm text-white/95 lg:block hidden drop-shadow-sm truncate">
+                <div className="px-3 py-2 md:px-4 md:py-3 text-sm md:text-lg text-white/95 lg:block hidden truncate">
                   {member.address}
                 </div>
-                <div className="px-3 py-2 text-sm text-white/95 drop-shadow-sm truncate">
+                <div className="px-3 py-2 md:px-4 md:py-3 text-sm md:text-lg text-white/95 truncate">
                   {member.phone}
                 </div>
               </div>

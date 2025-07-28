@@ -45,7 +45,7 @@ export function TiltedScroll({
 
   return (
     <div className={cn("flex items-center justify-center", className)}>
-      <div className="relative overflow-hidden h-[280px] md:h-[320px] w-[250px] md:w-[300px]">
+      <div className="relative overflow-hidden h-[280px] md:h-[320px] w-[280px] md:w-[350px]">
         {/* Top shadow */}
         <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-background to-transparent z-10 pointer-events-none" />
         
@@ -64,8 +64,8 @@ export function TiltedScroll({
               key={`${item.id}-${index}`}
               className="flex items-center gap-2 rounded-md border border-[#1da84f]/30 bg-gradient-to-b from-background/80 to-muted/80 p-3 md:p-4 shadow-md"
             >
-              <CheckCircle className="h-5 w-5 md:h-6 md:w-6 mr-2 stroke-[#1da84f]/60" />
-              <p className="text-base md:text-sm text-[#1da84f]/80">
+              <CheckCircle className="h-4 w-4 md:h-5 md:w-5 mr-2 stroke-[#1da84f] flex-shrink-0" />
+              <p className="text-xs md:text-sm text-[#1da84f]/90 truncate">
                 {item.text}
               </p>
             </div>

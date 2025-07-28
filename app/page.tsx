@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="min-h-screen w-full overflow-hidden bg-background text-foreground">
       <div className="flex justify-center py-4">
-        <DarkModeLogo className="w-96 h-24" />
+        <DarkModeLogo className="w-[500px] h-32" />
       </div>
       <Hero />
       <Logos />
