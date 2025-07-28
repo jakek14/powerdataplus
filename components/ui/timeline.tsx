@@ -170,14 +170,14 @@ export function Timeline() {
         {/* Mobile Horizontal Scroll Layout */}
         <div className="lg:hidden">
           <div 
-            className="flex overflow-x-auto gap-4 pb-2 scrollbar-hide min-w-0 touch-pan-x" 
+            className="flex overflow-x-auto gap-4 pb-2 scrollbar-hide min-w-0 touch-pan-x snap-x snap-mandatory px-8" 
             ref={scrollContainerRef}
           >
             {steps.map((step) => (
               <div
                 key={step.number}
                 ref={el => { cardRefs.current[step.number - 1] = el; }}
-                className="flex flex-col items-center w-[90vw] max-w-xs flex-shrink-0"
+                className="flex flex-col items-center w-[75vw] max-w-xs flex-shrink-0 snap-center"
               >
                 {/* Timeline Step */}
                 <div className="relative flex flex-col items-center w-full h-full">
@@ -192,12 +192,12 @@ export function Timeline() {
                   {/* Step Content Container */}
                   <div className="w-full h-full flex flex-col flex-1">
                     {/* Step Title */}
-                    <h3 className="text-lg font-bold text-white text-center mb-2 tracking-wide">
+                    <h3 className="text-xl font-bold text-white text-center mb-3 tracking-wide">
                       {step.title}
                     </h3>
                     {/* Consistent Height Card */}
-                    <div className="flex-1 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-3 shadow-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl group min-h-[120px] flex items-center justify-center">
-                      <p className="text-neutral-300 text-base leading-relaxed text-center px-2 whitespace-normal break-words">
+                    <div className="flex-1 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-5 shadow-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl group min-h-[160px] flex items-center justify-center">
+                      <p className="text-neutral-300 text-base leading-relaxed text-center px-3 whitespace-normal break-words">
                         {step.description}
                       </p>
                     </div>
@@ -208,7 +208,7 @@ export function Timeline() {
           </div>
 
           {/* Mobile Navigation Arrows */}
-          <div className="flex justify-center items-center gap-6 mt-2">
+          <div className="flex justify-center items-center gap-6 mt-4">
             <button
               onClick={prevStep}
               className="p-2 rounded-full bg-[#1da84f]/20 border border-[#1da84f]/40 text-[#1da84f] hover:bg-[#1da84f]/30 transition-all duration-300"

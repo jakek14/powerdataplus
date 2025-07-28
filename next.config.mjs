@@ -17,8 +17,7 @@ const nextConfig = {
       unoptimized: false
     },
     compress: true,
-    poweredByHeader: false,
-    serverExternalPackages: []
+    poweredByHeader: false
   })
 };
 

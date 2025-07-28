@@ -1,15 +1,12 @@
 "use client";
 
-import { AnimatePresence, motion, Variants } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-
 import { cn } from "@/lib/utils";
 
 interface CyclingHyperTextProps {
   words: string[];
   duration?: number;
   cycleDuration?: number;
-  framerProps?: Variants;
   className?: string;
   animateOnLoad?: boolean;
 }
@@ -22,18 +19,12 @@ export function CyclingHyperText({
   words,
   duration = 800,
   cycleDuration = 3000,
-  framerProps = {
-    initial: { opacity: 0, y: -10 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: 3 },
-  },
   className,
   animateOnLoad = true,
 }: CyclingHyperTextProps) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayText, setDisplayText] = useState<string[]>([]);
   const [trigger, setTrigger] = useState(true);
-  const [isClient, setIsClient] = useState(false);
   const interations = useRef(0);
   const isFirstRender = useRef(true);
 
@@ -44,13 +35,10 @@ export function CyclingHyperText({
 
   const currentWord = words[currentWordIndex];
 
-  // Ensure component only renders on client side
   useEffect(() => {
-    setIsClient(true);
     setDisplayText(words[0].split("").map(() => alphabets[getRandomInt(26)]));
   }, [words]);
 
-  // Initialize with first word animation
   useEffect(() => {
     if (animateOnLoad && isFirstRender.current) {
       triggerAnimation();
@@ -59,7 +47,7 @@ export function CyclingHyperText({
   }, [animateOnLoad]);
 
   useEffect(() => {
-    const totalSteps = 20; // Fixed number of steps for all words
+    const totalSteps = 20;
     const stepInterval = duration / totalSteps;
     
     const interval = setInterval(
@@ -85,7 +73,6 @@ export function CyclingHyperText({
           );
           interations.current = interations.current + 1;
         } else {
-          // Ensure the final word is completely revealed
           setDisplayText(currentWord.split(""));
           setTrigger(false);
           clearInterval(interval);
@@ -93,22 +80,18 @@ export function CyclingHyperText({
       },
       stepInterval,
     );
-    // Clean up interval on unmount
     return () => clearInterval(interval);
   }, [currentWord, duration, trigger, animateOnLoad]);
 
-  // Cycle through words
   useEffect(() => {
     const cycleInterval = setInterval(() => {
       const nextIndex = (currentWordIndex + 1) % words.length;
       setCurrentWordIndex(nextIndex);
-      // Don't immediately change displayText, let the animation handle it
     }, cycleDuration);
 
     return () => clearInterval(cycleInterval);
   }, [currentWordIndex, words, cycleDuration]);
 
-  // Trigger animation when word changes
   useEffect(() => {
     if (currentWord) {
       setDisplayText(currentWord.split(""));
@@ -116,33 +99,16 @@ export function CyclingHyperText({
     }
   }, [currentWord]);
 
-  // Don't render anything until client-side hydration is complete
-  if (!isClient) {
-    return (
-      <div className="inline-flex scale-100 cursor-default overflow-hidden">
-        <span className={cn("font-mono", className)}>
-          {words[0]}
-        </span>
-      </div>
-    );
-  }
-
   return (
-    <div
-      className="inline-flex scale-100 cursor-default overflow-hidden"
-      onMouseEnter={triggerAnimation}
-    >
-      <AnimatePresence mode="wait">
-        {displayText.map((letter, i) => (
-          <motion.span
-            key={`${currentWordIndex}-${i}`}
-            className={cn("font-mono", letter === " " ? "w-3" : "", className)}
-            {...framerProps}
-          >
-            {letter}
-          </motion.span>
-        ))}
-      </AnimatePresence>
+    <div className="flex scale-100 cursor-default overflow-hidden py-2">
+      {displayText.map((letter, i) => (
+        <span
+          key={i}
+          className={cn("font-mono", letter === " " ? "w-3" : "", className)}
+        >
+          {letter.toUpperCase()}
+        </span>
+      ))}
     </div>
   );
 } 

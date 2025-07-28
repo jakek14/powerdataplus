@@ -1,11 +1,11 @@
 export const siteConfig = {
-  name: "Launch UI",
-  url: "https://launchuicomponents.com",
+  name: "KnownVisitors",
+  url: "https://knownvisitors.com",
   getStartedUrl:
-    "https://launchuicomponents.com/docs/getting-started/introduction",
-  ogImage: "https://launchuicomponents.com/og.jpg",
+    "https://knownvisitors.com",
+  ogImage: "https://knownvisitors.com/og.jpg",
   description:
-    "Landing page components built with React, Shadcn/ui and Tailwind that will make your website feel premium.",
+    "Identify anonymous visitors and turn them into known customers with powerful visitor identification technology.",
   links: {
     twitter: "https://twitter.com/mikolajdobrucki",
     github: "https://github.com/launch-ui/launch-ui",

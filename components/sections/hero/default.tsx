@@ -55,7 +55,7 @@ export default function Hero({
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-radial from-[#1da84f]/4 via-[#1da84f]/2 to-transparent rounded-full blur-xl opacity-40" />
       </div>
       
-      <div className="max-w-container mx-auto flex flex-col gap-12 pt-16 sm:gap-24 relative z-10">
+      <div className="max-w-container mx-auto flex flex-col gap-12 pt-8 sm:gap-24 relative z-10">
         <div className="flex flex-col items-center gap-0 text-center">
           {badge !== false && (
             <div className="-mt-12 sm:-mt-16">

@@ -186,7 +186,7 @@ const RevenueLineGraph: React.FC<RevenueLineGraphProps> = ({ selectedTimeFrame }
   return (
     <div className="px-4 sm:px-8 py-4 w-full max-w-full mx-auto overflow-hidden gap-0">
       {/* Stats Section */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <motion.div 
           key={selectedTimeFrame}
           className="mb-0 mt-0"
@@ -230,7 +230,7 @@ const RevenueLineGraph: React.FC<RevenueLineGraphProps> = ({ selectedTimeFrame }
       </AnimatePresence>
 
       {/* Chart Section */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <motion.div 
           key={`chart-${selectedTimeFrame}`}
           className="h-32 w-full mb-0"

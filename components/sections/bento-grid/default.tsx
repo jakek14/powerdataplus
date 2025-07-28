@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import BentoGridDemo from "../../bento-grid-demo";
 import { Section } from "../../ui/section";
+import { cn } from "@/lib/utils";
 
 interface BentoGridSectionProps {
   title?: string;
@@ -38,14 +39,15 @@ export default function BentoGridSection({
   className,
 }: BentoGridSectionProps) {
   return (
-    <Section className={className}>
-      <motion.div 
-        className="max-w-container mx-auto flex flex-col items-center gap-6 sm:gap-20"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-      >
+    <Section className={cn("px-0 py-6 sm:py-12 md:py-16", className)}>
+      <div className="w-full max-w-[100vw] overflow-x-hidden">
+        <motion.div 
+          className="max-w-container mx-auto flex flex-col items-center gap-6 sm:gap-20"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
         <motion.div 
           className="text-center"
           variants={itemVariants}
@@ -69,6 +71,7 @@ export default function BentoGridSection({
           <BentoGridDemo />
         </motion.div>
       </motion.div>
+      </div>
     </Section>
   );
 } 
