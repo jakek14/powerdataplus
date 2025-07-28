@@ -24,11 +24,6 @@ export const LockAnimation: React.FC<LockAnimationProps> = ({
             animationTimingFunction: 'linear'
           }}
           className="w-full h-full"
-          onError={(e) => {
-            console.error('Failed to load Lock.gif:', e);
-            e.currentTarget.style.display = 'none';
-          }}
-          onLoad={() => console.log('Lock.gif loaded successfully')}
         />
       </div>
     </div>

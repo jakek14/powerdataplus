@@ -70,11 +70,6 @@ const ImageAutoSlider: React.FC = () => {
                   alt={`Gallery image ${(index % images.length) + 1}`}
                   className="w-full h-full object-contain"
                   style={{ boxShadow: 'none', border: 'none', outline: 'none', background: 'white' }}
-                  onError={(e) => {
-                    console.error('Failed to load image:', image, e);
-                    e.currentTarget.style.display = 'none';
-                  }}
-                  onLoad={() => console.log('Image loaded successfully:', image)}
                 />
               </div>
             ))}
