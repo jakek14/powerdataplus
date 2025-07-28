@@ -1,25 +1,26 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface LockAnimationProps {
   size?: number;
-  autoAnimate?: boolean;
-  autoAnimateInterval?: number;
+  _autoAnimate?: boolean;
+  _autoAnimateInterval?: number;
 }
 
 export const LockAnimation: React.FC<LockAnimationProps> = ({
   size = 1,
-  autoAnimate = true,
-  autoAnimateInterval = 3000
+  _autoAnimate = true,
+  _autoAnimateInterval = 3000
 }) => {
   return (
     <div className="flex items-center justify-center">
       <div style={{ transform: `scale(${size}) translateY(-20px)` }}>
-        <img
+        <Image
           src="/Lock.gif"
           alt="Lock Animation"
+          width={400}
+          height={400}
           style={{
-            width: 400,
-            height: 400,
             border: 'none',
             background: 'transparent',
             objectFit: 'contain',

@@ -25,7 +25,7 @@ export function HyperText({
   const interations = useRef(0);
   const isFirstRender = useRef(true);
 
-  const triggerAnimation = () => {
+  const _triggerAnimation = () => {
     interations.current = 0;
     setTrigger(true);
   };

@@ -1,6 +1,6 @@
 "use client";
 
-import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+import { BentoGridItem } from "@/components/ui/bento-grid";
 import {
   IconBrain,
   IconChartBar,
@@ -351,7 +351,7 @@ const SkeletonFive = () => {
   );
 };
 
-const items = [
+const _items = [
   {
     title: "Your Hidden Funnel Just Got Exposed",
     description: (
