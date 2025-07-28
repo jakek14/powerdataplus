@@ -1,12 +1,22 @@
 import React from "react";
 
+const getImagePath = (path: string) => {
+  if (typeof window !== 'undefined') {
+    // Client-side: check if we're on GitHub Pages
+    const isGitHubPages = window.location.pathname.includes('/darkmodeknownvisitors');
+    return isGitHubPages ? `/darkmodeknownvisitors${path}` : path;
+  }
+  // Server-side: use environment check
+  return process.env.NODE_ENV === 'production' ? `/darkmodeknownvisitors${path}` : path;
+};
+
 const images = [
-  process.env.NODE_ENV === 'production' ? "/darkmodeknownvisitors/Shopify.png" : "/Shopify.png",
-  process.env.NODE_ENV === 'production' ? "/darkmodeknownvisitors/Snapchat.png" : "/Snapchat.png",
-  process.env.NODE_ENV === 'production' ? "/darkmodeknownvisitors/Squarespace.png" : "/Squarespace.png",
-  process.env.NODE_ENV === 'production' ? "/darkmodeknownvisitors/Tiktok.png" : "/Tiktok.png",
-  process.env.NODE_ENV === 'production' ? "/darkmodeknownvisitors/Wix.png" : "/Wix.png",
-  process.env.NODE_ENV === 'production' ? "/darkmodeknownvisitors/Woo.png" : "/Woo.png"
+  getImagePath("/Shopify.png"),
+  getImagePath("/Snapchat.png"),
+  getImagePath("/Squarespace.png"),
+  getImagePath("/Tiktok.png"),
+  getImagePath("/Wix.png"),
+  getImagePath("/Woo.png")
 ];
 
 const duplicatedImages = [...images, ...images];
