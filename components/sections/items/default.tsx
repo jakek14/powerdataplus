@@ -89,10 +89,6 @@ export default function Items({
             </div>
             <div className="flex-1 flex justify-center">
               <div className="w-full max-w-sm bg-card/80 backdrop-blur-sm rounded-lg border border-[#1da84f]/30 p-4 shadow-lg">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-2 h-2 bg-[#1da84f] rounded-full animate-pulse"></div>
-                  <span className="text-xs text-[#1da84f] font-medium">LIVE VISITOR</span>
-                </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 bg-[#1da84f]/20 rounded-full flex items-center justify-center">
@@ -105,9 +101,6 @@ export default function Items({
                   </div>
                   <div className="text-xs text-muted-foreground">
                     <span className="font-medium">Company:</span> TechCorp Inc.
-                  </div>
-                  <div className="text-xs text-muted-foreground">
-                    <span className="font-medium">Role:</span> Senior Developer
                   </div>
                   <div className="text-xs text-[#1da84f] font-medium">
                     Just visited your website

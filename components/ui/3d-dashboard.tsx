@@ -58,14 +58,14 @@ const Dashboard3D: React.FC = () => {
         <div className="relative p-4">
           {/* Header */}
           <div className="flex justify-between items-center mb-3">
-            <h3 className="text-lg font-bold text-white tracking-wide">
+            <h3 className="text-xl font-bold text-white tracking-wide drop-shadow-sm">
               Dashboard
             </h3>
             <Button
               onClick={exportToCSV}
               variant="outline"
               size="sm"
-              className="bg-black/30 border-[#1da84f]/20 text-[#1da84f] hover:bg-[#1da84f]/5 hover:border-[#1da84f]/30 transition-all duration-300 text-xs px-3 py-1"
+              className="bg-black/40 border-[#1da84f]/30 text-[#1da84f] hover:bg-[#1da84f]/10 hover:border-[#1da84f]/40 transition-all duration-300 text-xs px-3 py-1"
             >
               <Download className="h-3 w-3 mr-1" />
               Export
@@ -73,31 +73,31 @@ const Dashboard3D: React.FC = () => {
           </div>
 
           {/* Table */}
-          <div className="overflow-hidden rounded-lg border border-[#1da84f]/15">
+          <div className="overflow-hidden rounded-lg border border-[#1da84f]/20">
             {/* Table Header */}
-            <div className="bg-gradient-to-r from-[#1da84f]/15 to-[#1da84f]/5 grid grid-cols-2">
-              <div className="px-3 py-2 text-xs font-semibold text-[#1da84f] uppercase tracking-wider">
+            <div className="bg-gradient-to-r from-[#1da84f]/20 to-[#1da84f]/10 grid grid-cols-2">
+              <div className="px-3 py-2 text-sm font-semibold text-[#1da84f] uppercase tracking-wider drop-shadow-sm">
                 Name
               </div>
-              <div className="px-3 py-2 text-xs font-semibold text-[#1da84f] uppercase tracking-wider">
+              <div className="px-3 py-2 text-sm font-semibold text-[#1da84f] uppercase tracking-wider drop-shadow-sm">
                 Phone
               </div>
             </div>
             
             {/* Table Content */}
-            <div className="bg-black/30 divide-y divide-[#1da84f]/5">
+            <div className="bg-black/40 divide-y divide-[#1da84f]/10">
               {members.map((member, index) => (
                 <div 
                   key={member.id} 
-                  className="grid grid-cols-2 hover:bg-[#1da84f]/3 transition-all duration-200"
+                  className="grid grid-cols-2 hover:bg-[#1da84f]/5 transition-all duration-200"
                   style={{
                     animationDelay: `${index * 30}ms`
                   }}
                 >
-                  <div className="px-3 py-2 text-sm text-white/90 font-medium">
+                  <div className="px-3 py-2 text-base text-white font-semibold drop-shadow-sm truncate">
                     {member.name}
                   </div>
-                  <div className="px-3 py-2 text-sm text-white/70">
+                  <div className="px-3 py-2 text-base text-white/95 drop-shadow-sm truncate">
                     {member.phone}
                   </div>
                 </div>
