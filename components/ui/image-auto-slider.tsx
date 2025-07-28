@@ -1,12 +1,12 @@
 import React from "react";
 
 const images = [
-  "/Shopify.png",
-  "/Snapchat.png",
-  "/Squarespace.png",
-  "/Tiktok.png",
-  "/Wix.png",
-  "/Woo.png"
+  process.env.NODE_ENV === 'production' ? "/darkmodeknownvisitors/Shopify.png" : "/Shopify.png",
+  process.env.NODE_ENV === 'production' ? "/darkmodeknownvisitors/Snapchat.png" : "/Snapchat.png",
+  process.env.NODE_ENV === 'production' ? "/darkmodeknownvisitors/Squarespace.png" : "/Squarespace.png",
+  process.env.NODE_ENV === 'production' ? "/darkmodeknownvisitors/Tiktok.png" : "/Tiktok.png",
+  process.env.NODE_ENV === 'production' ? "/darkmodeknownvisitors/Wix.png" : "/Wix.png",
+  process.env.NODE_ENV === 'production' ? "/darkmodeknownvisitors/Woo.png" : "/Woo.png"
 ];
 
 const duplicatedImages = [...images, ...images];
@@ -70,6 +70,11 @@ const ImageAutoSlider: React.FC = () => {
                   alt={`Gallery image ${(index % images.length) + 1}`}
                   className="w-full h-full object-contain"
                   style={{ boxShadow: 'none', border: 'none', outline: 'none', background: 'white' }}
+                  onError={(e) => {
+                    console.error('Failed to load image:', image, e);
+                    e.currentTarget.style.display = 'none';
+                  }}
+                  onLoad={() => console.log('Image loaded successfully:', image)}
                 />
               </div>
             ))}

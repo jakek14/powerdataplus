@@ -11,7 +11,7 @@ export const LockAnimation: React.FC<LockAnimationProps> = ({
     <div className="flex items-center justify-center">
       <div style={{ transform: `scale(${size}) translateY(-20px)` }}>
         <img
-          src="/Lock.gif"
+          src={process.env.NODE_ENV === 'production' ? '/darkmodeknownvisitors/Lock.gif' : '/Lock.gif'}
           alt="Lock Animation"
           style={{
             width: '400px',
@@ -24,6 +24,11 @@ export const LockAnimation: React.FC<LockAnimationProps> = ({
             animationTimingFunction: 'linear'
           }}
           className="w-full h-full"
+          onError={(e) => {
+            console.error('Failed to load Lock.gif:', e);
+            e.currentTarget.style.display = 'none';
+          }}
+          onLoad={() => console.log('Lock.gif loaded successfully')}
         />
       </div>
     </div>
