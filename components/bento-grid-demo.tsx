@@ -6,7 +6,7 @@ import {
   IconEye,
   IconTarget,
 } from "@tabler/icons-react";
-import { motion } from "framer-motion";
+
 import Dashboard3D from "./ui/3d-dashboard";
 import ImageAutoSlider from "./ui/image-auto-slider";
 import { TiltedScroll } from "./ui/tilted-scroll";
