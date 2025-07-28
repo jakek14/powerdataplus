@@ -25,10 +25,7 @@ export function HyperText({
   const interations = useRef(0);
   const isFirstRender = useRef(true);
 
-  const _triggerAnimation = () => {
-    interations.current = 0;
-    setTrigger(true);
-  };
+
 
   useEffect(() => {
     const interval = setInterval(

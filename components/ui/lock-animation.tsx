@@ -3,14 +3,10 @@ import Image from 'next/image';
 
 interface LockAnimationProps {
   size?: number;
-  _autoAnimate?: boolean;
-  _autoAnimateInterval?: number;
 }
 
 export const LockAnimation: React.FC<LockAnimationProps> = ({
-  size = 1,
-  _autoAnimate = true,
-  _autoAnimateInterval = 3000
+  size = 1
 }) => {
   return (
     <div className="flex items-center justify-center">

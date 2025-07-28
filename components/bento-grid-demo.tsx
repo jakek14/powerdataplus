@@ -1,6 +1,6 @@
 "use client";
 
-import { BentoGridItem } from "@/components/ui/bento-grid";
+
 import {
   IconBrain,
   IconChartBar,
@@ -351,63 +351,7 @@ const SkeletonFive = () => {
   );
 };
 
-const _items = [
-  {
-    title: "Your Hidden Funnel Just Got Exposed",
-    description: (
-              <span className="text-sm">
-          You&apos;re only seeing a fraction of your funnel. KnownVisitors uncovers who&apos;s actually moving through it.
-        </span>
-    ),
-    header: <SkeletonOne />,
-    className: "md:col-span-1",
-    icon: <IconEye className="h-4 w-4 text-[#1da84f]" />,
-  },
-  {
-    title: "Effortless List Growth",
-    description: (
-      <span className="text-sm">
-        Grow your email and SMS lists with real, high-intent contacts — without relying on popups or gated content.
-      </span>
-    ),
-    header: <SkeletonTwo />,
-    className: "md:col-span-1",
-    icon: <IconChartBar className="h-4 w-4 text-[#1da84f]" />,
-  },
-  {
-    title: "Lead Generation",
-    description: (
-      <span className="text-sm">
-        Convert anonymous visitors into qualified leads automatically.
-      </span>
-    ),
-    header: <SkeletonThree />,
-    className: "md:col-span-1",
-    icon: <IconTarget className="h-4 w-4 text-[#1da84f]" />,
-  },
-  {
-    title: "Visitor Journey Tracking",
-    description: (
-      <span className="text-sm">
-        Follow the complete journey from anonymous visitor to known customer.
-      </span>
-    ),
-    header: <SkeletonFour />,
-    className: "md:col-span-2",
-    icon: <IconUsers className="h-4 w-4 text-[#1da84f]" />,
-  },
-  {
-    title: "Smart Insights",
-    description: (
-      <span className="text-sm">
-        Get AI-powered insights to optimize your marketing and sales strategies.
-      </span>
-    ),
-    header: <SkeletonFive />,
-    className: "md:col-span-1 md:row-span-2",
-    icon: <IconBrain className="h-4 w-4 text-[#1da84f]" />,
-  },
-];
+
 
 const topCards = [
   {
