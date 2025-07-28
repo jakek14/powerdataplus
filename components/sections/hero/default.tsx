@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 
-import { Badge } from "../../ui/badge";
+
 import { Button, type ButtonProps } from "../../ui/button";
 import { HeroMemberList } from "../../ui/hero-member-list";
 import { Mockup, MockupFrame } from "../../ui/mockup";
