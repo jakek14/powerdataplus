@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 
 interface LockAnimationProps {
   size?: number;
@@ -11,12 +10,12 @@ export const LockAnimation: React.FC<LockAnimationProps> = ({
   return (
     <div className="flex items-center justify-center">
       <div style={{ transform: `scale(${size}) translateY(-20px)` }}>
-        <Image
+        <img
           src="/Lock.gif"
           alt="Lock Animation"
-          width={400}
-          height={400}
           style={{
+            width: '400px',
+            height: '400px',
             border: 'none',
             background: 'transparent',
             objectFit: 'contain',

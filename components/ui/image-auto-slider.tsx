@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 const images = [
   "/Shopify.png",
@@ -66,11 +65,9 @@ const ImageAutoSlider: React.FC = () => {
                   background: 'white' 
                 }}
               >
-                <Image
+                <img
                   src={image}
                   alt={`Gallery image ${(index % images.length) + 1}`}
-                  width={200}
-                  height={200}
                   className="w-full h-full object-contain"
                   style={{ boxShadow: 'none', border: 'none', outline: 'none', background: 'white' }}
                 />
