@@ -2,11 +2,9 @@
 
 
 import {
-  IconBrain,
   IconChartBar,
   IconEye,
   IconTarget,
-  IconUsers,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Dashboard3D from "./ui/3d-dashboard";
@@ -96,7 +94,7 @@ export default function BentoGridDemo() {
   );
 }
 
-const SkeletonOne = () => {
+const _SkeletonOne = () => {
   const variants = {
     initial: {
       x: 0,
@@ -153,7 +151,7 @@ const SkeletonOne = () => {
   );
 };
 
-const SkeletonTwo = () => {
+const _SkeletonTwo = () => {
   const variants = {
     initial: {
       width: 0,
@@ -195,7 +193,7 @@ const SkeletonTwo = () => {
   );
 };
 
-const SkeletonThree = () => {
+const _SkeletonThree = () => {
   const variants = {
     initial: {
       backgroundPosition: "0 50%",
@@ -226,7 +224,7 @@ const SkeletonThree = () => {
   );
 };
 
-const SkeletonFour = () => {
+const _SkeletonFour = () => {
   const first = {
     initial: {
       x: 20,
@@ -297,7 +295,7 @@ const SkeletonFour = () => {
   );
 };
 
-const SkeletonFive = () => {
+const _SkeletonFive = () => {
   const variants = {
     initial: {
       x: 0,
