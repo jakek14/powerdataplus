@@ -13,8 +13,10 @@ const nextConfig = {
   
   // Cloudways deployment (default or when DEPLOYMENT_TYPE=cloudways)
   ...(process.env.DEPLOYMENT_TYPE !== 'github-pages' && {
+    output: 'export',
+    trailingSlash: true,
     images: {
-      unoptimized: false
+      unoptimized: true
     },
     compress: true,
     poweredByHeader: false

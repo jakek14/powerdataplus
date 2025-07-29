@@ -7,7 +7,8 @@
     "build": "next build",
     "build:github": "DEPLOYMENT_TYPE=github-pages next build",
     "build:cloudways": "DEPLOYMENT_TYPE=cloudways next build",
-    "start": "next start",
+    "build:prod": "NODE_ENV=production DEPLOYMENT_TYPE=cloudways next build",
+    "start": "NODE_ENV=production next start",
     "lint": "next lint",
     "export": "DEPLOYMENT_TYPE=github-pages next build"
   },
