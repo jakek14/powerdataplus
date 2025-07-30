@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 
-import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 import DarkModeLogo from "../../logos/darkmode-logo";
@@ -26,8 +25,6 @@ interface FooterProps {
   name?: string;
   columns?: FooterColumnProps[];
   copyright?: string;
-  policies?: FooterLink[];
-  showModeToggle?: boolean;
   className?: string;
 }
 
@@ -36,8 +33,6 @@ export default function FooterSection({
   name = "",
   columns = [],
   copyright = "© 2025 KnownVisitors. All rights reserved",
-  policies = [],
-  showModeToggle = false,
   className,
 }: FooterProps) {
   return (
