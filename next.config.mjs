@@ -13,10 +13,8 @@ const nextConfig = {
   
   // Vercel deployment (default or when DEPLOYMENT_TYPE=vercel)
   ...(process.env.DEPLOYMENT_TYPE !== 'github-pages' && {
-    output: 'export',
-    trailingSlash: true,
     images: {
-      unoptimized: true
+      unoptimized: false
     },
     compress: true,
     poweredByHeader: false
