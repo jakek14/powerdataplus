@@ -1,16 +1,16 @@
 "use client"
 
-import { Download } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
+import React from 'react'
+import { Button } from './button'
+import { Download } from 'lucide-react'
 
 const members = [
   {
     id: 1,
     name: "John Smith",
     email: "john@techcorp.com",
-    shortEmail: "john@tech.com",
-    address: "123 Main St, SF, CA",
+    shortEmail: "john@techcorp.com",
+    address: "123 Main St, San Francisco, CA",
     phone: "+1 (555) 123-4567"
   },
   {
@@ -18,7 +18,7 @@ const members = [
     name: "Sarah Johnson",
     email: "sarah@design.com",
     shortEmail: "sarah@design.com",
-    address: "456 Oak Ave, NY, NY",
+    address: "456 Oak Ave, New York, NY",
     phone: "+1 (555) 234-5678"
   },
   {
@@ -41,16 +41,16 @@ const members = [
     id: 5,
     name: "David Brown",
     email: "david@consulting.com",
-    shortEmail: "david@consult.com",
+    shortEmail: "david@consulting.com",
     address: "654 Maple Dr, Boston, MA",
     phone: "+1 (555) 567-8901"
   },
   {
     id: 6,
-    name: "Lisa Garcia",
-    email: "lisa@digital.com",
-    shortEmail: "lisa@digital.com",
-    address: "987 Cedar Ln, Miami, FL",
+    name: "Lisa Chen",
+    email: "lisa@innovate.com",
+    shortEmail: "lisa@innovate.com",
+    address: "987 Cedar Ln, Portland, OR",
     phone: "+1 (555) 678-9012"
   },
   {
@@ -88,22 +88,6 @@ const members = [
 
 ]
 
-const exportToCSV = () => {
-  const csvContent = "data:text/csv;charset=utf-8," 
-    + "Name,Email,Address,Phone\n"
-    + members.map(member => 
-        `${member.name},${member.email},${member.address},${member.phone}`
-      ).join("\n")
-  
-  const encodedUri = encodeURI(csvContent)
-  const link = document.createElement("a")
-  link.setAttribute("href", encodedUri)
-  link.setAttribute("download", "members.csv")
-  document.body.appendChild(link)
-  link.click()
-  document.body.removeChild(link)
-}
-
 export function HeroMemberList() {
   return (
     <div className="relative w-full h-full bg-black/60 backdrop-blur-md border border-[#1da84f]/30 rounded-xl shadow-lg">
@@ -115,10 +99,10 @@ export function HeroMemberList() {
             Dashboard
           </h3>
           <Button
-            onClick={exportToCSV}
             variant="outline"
             size="sm"
-            className="bg-black/40 border-[#1da84f]/30 text-[#1da84f] hover:bg-[#1da84f]/10 hover:border-[#1da84f]/40 transition-all duration-300 text-xs md:text-sm"
+            className="bg-black/40 border-[#1da84f]/30 text-[#1da84f] opacity-50 cursor-not-allowed transition-all duration-300 text-xs md:text-sm"
+            disabled
           >
             <Download className="h-3 w-3 md:h-4 md:w-4 mr-1" />
             Export

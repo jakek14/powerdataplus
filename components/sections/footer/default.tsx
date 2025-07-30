@@ -10,7 +10,6 @@ import {
   FooterColumn,
   FooterContent,
 } from "../../ui/footer";
-import { ModeToggle } from "../../ui/mode-toggle";
 
 interface FooterLink {
   text: string;
@@ -37,11 +36,8 @@ export default function FooterSection({
   name = "",
   columns = [],
   copyright = "© 2025 KnownVisitors. All rights reserved",
-  policies = [
-    { text: "Privacy Policy", href: siteConfig.url },
-    { text: "Terms of Service", href: siteConfig.url },
-  ],
-  showModeToggle = true,
+  policies = [],
+  showModeToggle = false,
   className,
 }: FooterProps) {
   return (
@@ -77,14 +73,6 @@ export default function FooterSection({
           <div>
             <FooterBottom>
               <div>{copyright}</div>
-              <div className="flex items-center gap-4">
-                {policies.map((policy, index) => (
-                  <a key={index} href={policy.href}>
-                    {policy.text}
-                  </a>
-                ))}
-                {showModeToggle && <ModeToggle />}
-              </div>
             </FooterBottom>
           </div>
         </Footer>

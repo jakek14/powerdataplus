@@ -1,41 +1,19 @@
 'use client'
 
+import React, { useState } from 'react'
+import { Button } from './button'
 import { Download } from 'lucide-react'
-import { useState } from 'react'
-
-import { Button } from '@/components/ui/button'
 
 const Dashboard3D: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false)
   
   const members = [
-    { id: 1, name: "John Smith", email: "john@techcorp.com", address: "123 Main St, SF", phone: "+1 (555) 123-4567" },
+    { id: 1, name: "John Smith", email: "john@company.com", address: "123 Main St, CA", phone: "+1 (555) 123-4567" },
     { id: 2, name: "Sarah Johnson", email: "sarah@design.com", address: "456 Oak Ave, NY", phone: "+1 (555) 234-5678" },
     { id: 3, name: "Mike Wilson", email: "mike@marketing.com", address: "789 Pine Rd, Austin", phone: "+1 (555) 345-6789" },
     { id: 4, name: "Emily Davis", email: "emily@startup.com", address: "321 Elm Blvd, Seattle", phone: "+1 (555) 456-7890" },
     { id: 5, name: "David Brown", email: "david@consulting.com", address: "654 Maple Dr, Boston", phone: "+1 (555) 567-8901" }
   ]
-
-  const exportToCSV = () => {
-    const headers = ['Name', 'Email', 'Address', 'Phone']
-    const csvContent = [
-      headers.join(','),
-      ...members.map(member => [
-        member.name,
-        member.email,
-        member.address,
-        member.phone
-      ].join(','))
-    ].join('\n')
-
-    const blob = new Blob([csvContent], { type: 'text/csv' })
-    const url = window.URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = 'member-list.csv'
-    a.click()
-    window.URL.revokeObjectURL(url)
-  }
 
   return (
     <div className="relative w-full h-full max-w-lg mx-auto mt-8">
@@ -61,10 +39,10 @@ const Dashboard3D: React.FC = () => {
               Dashboard
             </h3>
             <Button
-              onClick={exportToCSV}
               variant="outline"
               size="sm"
-              className="bg-black/40 border-[#1da84f]/30 text-[#1da84f] hover:bg-[#1da84f]/10 hover:border-[#1da84f]/40 transition-all duration-300 text-sm px-3 py-1"
+              className="bg-black/40 border-[#1da84f]/30 text-[#1da84f] opacity-50 cursor-not-allowed transition-all duration-300 text-sm px-3 py-1"
+              disabled
             >
               <Download className="h-4 w-4 mr-1" />
               Export
