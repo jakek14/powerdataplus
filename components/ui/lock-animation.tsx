@@ -1,13 +1,15 @@
 import React from 'react';
 
 const getImagePath = (path: string) => {
+  // Simple approach: just return the path as-is for local development
+  // For production, check if we need to add a base path
   if (typeof window !== 'undefined') {
     // Client-side: check if we're on GitHub Pages
     const isGitHubPages = window.location.pathname.includes('/darkmodeknownvisitors');
     return isGitHubPages ? `/darkmodeknownvisitors${path}` : path;
   }
-  // Server-side: use environment check
-  return process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}${path}` : path;
+  // Server-side: for local development, just return the path
+  return path;
 };
 
 interface LockAnimationProps {
