@@ -7,7 +7,7 @@ const getImagePath = (path: string) => {
     return isGitHubPages ? `/darkmodeknownvisitors${path}` : path;
   }
   // Server-side: use environment check
-  return process.env.NODE_ENV === 'production' ? `/darkmodeknownvisitors${path}` : path;
+  return process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}${path}` : path;
 };
 
 interface LockAnimationProps {
