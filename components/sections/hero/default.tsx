@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 
 
 import { Button, type ButtonProps } from "../../ui/button";
@@ -34,6 +34,60 @@ export default function Hero({
   className,
 }: HeroProps) {
   const words = ["Sales", "Leads", "Revenue", "Buyers", "Users"];
+  const [email, setEmail] = useState("");
+  const [buttonText, setButtonText] = useState("Join the Waitlist");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleEmailSubmit = async () => {
+    if (!email || isSubmitting) return;
+
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch("https://sheetdb.io/api/v1/ospfsyvgjb57s", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          timestamp: new Date().toISOString(),
+        }),
+      });
+
+      if (response.ok) {
+        setButtonText("Thank you!");
+        setIsSubmitted(true);
+        setEmail("");
+        // Reset button text after 3 seconds
+        setTimeout(() => {
+          setButtonText("Join the Waitlist");
+          setIsSubmitted(false);
+        }, 3000);
+      } else {
+        console.error("Failed to submit email");
+        setButtonText("Try Again");
+        setTimeout(() => {
+          setButtonText("Join the Waitlist");
+        }, 2000);
+      }
+    } catch (error) {
+      console.error("Error submitting email:", error);
+      setButtonText("Try Again");
+      setTimeout(() => {
+        setButtonText("Join the Waitlist");
+      }, 2000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      handleEmailSubmit();
+    }
+  };
 
   return (
     <Section
@@ -75,14 +129,24 @@ export default function Hero({
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 bg-background/50 border border-border/50 rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#1da84f]/50 focus:border-[#1da84f] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#1da84f]/20"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              onKeyPress={handleKeyPress}
+              disabled={isSubmitting || isSubmitted}
+              className="flex-1 px-4 py-3 bg-background/50 border border-border/50 rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#1da84f]/50 focus:border-[#1da84f] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#1da84f]/20 disabled:opacity-50 disabled:cursor-not-allowed"
             />
             <Button
               variant="default"
               size="lg"
-              className="bg-[#1da84f] hover:bg-[#1da84f]/90 text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#1da84f]/30 transform"
+              onClick={handleEmailSubmit}
+              disabled={isSubmitting || isSubmitted || !email}
+              className={`transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#1da84f]/30 transform ${
+                isSubmitted 
+                  ? "bg-green-600 hover:bg-green-700 text-white" 
+                  : "bg-[#1da84f] hover:bg-[#1da84f]/90 text-white"
+              } ${(isSubmitting || isSubmitted || !email) ? "opacity-50 cursor-not-allowed" : ""}`}
             >
-              Join the Waitlist
+              {isSubmitting ? "Submitting..." : buttonText}
             </Button>
           </div>
           {mockup !== false && (
