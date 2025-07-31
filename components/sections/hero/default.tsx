@@ -45,15 +45,14 @@ export default function Hero({
     setIsSubmitting(true);
     
     try {
+      // Create form data for SheetDB
+      const formData = new FormData();
+      formData.append('email', email);
+      formData.append('timestamp', new Date().toISOString());
+
       const response = await fetch("https://sheetdb.io/api/v1/ospfsyvgjb57s", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          timestamp: new Date().toISOString(),
-        }),
+        body: formData,
       });
 
       if (response.ok) {
@@ -66,7 +65,7 @@ export default function Hero({
           setIsSubmitted(false);
         }, 3000);
       } else {
-        console.error("Failed to submit email");
+        console.error("Failed to submit email:", response.status, response.statusText);
         setButtonText("Try Again");
         setTimeout(() => {
           setButtonText("Join the Waitlist");
