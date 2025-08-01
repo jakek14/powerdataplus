@@ -37,15 +37,24 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    images: [
+      {
+        url: "/Logos_KV-Logo-Square-GreenBG.png",
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
+    images: ["/Logos_KV-Logo-Square-GreenBG.png"],
     creator: "@mikolajdobrucki",
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: "/Logos_KV-Logo-Square-GreenBG.png",
     apple: "/apple-touch-icon.png",
   },
 };
@@ -57,6 +66,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" style={{ colorScheme: "dark" }} className="dark" data-theme="dark">
+      <head>
+        <meta property="og:image" content="/Logos_KV-Logo-Square-GreenBG.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="KnownVisitors Logo" />
+        <meta name="twitter:image" content="/Logos_KV-Logo-Square-GreenBG.png" />
+      </head>
       <body className={`${inter.className} bg-background antialiased dark:bg-background dark:text-foreground`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
