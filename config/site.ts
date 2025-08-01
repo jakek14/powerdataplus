@@ -3,7 +3,7 @@ export const siteConfig = {
   url: "https://knownvisitors.com",
   getStartedUrl:
     "https://knownvisitors.com",
-  ogImage: "https://knownvisitors.com/og.jpg",
+  ogImage: "/app-dark.png",
   description:
     "Identify anonymous visitors and turn them into known customers with powerful visitor identification technology.",
   links: {
