@@ -3,7 +3,7 @@ export const siteConfig = {
   url: "https://knownvisitors.com",
   getStartedUrl:
     "https://knownvisitors.com",
-  ogImage: "/Untitled-1_KV-Logo-Square-GreenBG.svg",
+  ogImage: "/Logos_KV-Logo-Square-GreenBG.png",
   description:
     "Identify anonymous visitors and turn them into known customers with powerful visitor identification technology.",
   links: {
