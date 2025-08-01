@@ -53,9 +53,14 @@ export const metadata: Metadata = {
     images: ["/Logos_KV-Logo-Square-GreenBG.png"],
     creator: "@mikolajdobrucki",
   },
+  other: {
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "apple-mobile-web-app-title": "KnownVisitors",
+  },
   icons: {
     icon: "/Logos_KV-Logo-Square-GreenBG.png",
-    apple: "/apple-touch-icon.png",
+    apple: "/Logos_KV-Logo-Square-GreenBG.png",
   },
 };
 
@@ -72,6 +77,11 @@ export default function RootLayout({
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="KnownVisitors Logo" />
         <meta name="twitter:image" content="/Logos_KV-Logo-Square-GreenBG.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="KnownVisitors" />
+        <link rel="apple-touch-icon" href="/Logos_KV-Logo-Square-GreenBG.png" />
+        <link rel="apple-touch-icon-precomposed" href="/Logos_KV-Logo-Square-GreenBG.png" />
       </head>
       <body className={`${inter.className} bg-background antialiased dark:bg-background dark:text-foreground`}>
         <ThemeProvider>{children}</ThemeProvider>
