@@ -4,8 +4,8 @@ const nextConfig = {
   ...(process.env.DEPLOYMENT_TYPE === 'github-pages' && {
     output: 'export',
     trailingSlash: true,
-    assetPrefix: process.env.NODE_ENV === 'production' ? '/darkmodeknownvisitors/' : '',
-    basePath: process.env.NODE_ENV === 'production' ? '/darkmodeknownvisitors' : '',
+    assetPrefix: process.env.NODE_ENV === 'production' ? '/powerdataplus/' : '',
+    basePath: process.env.NODE_ENV === 'production' ? '/powerdataplus' : '',
     images: {
       unoptimized: true
     }
