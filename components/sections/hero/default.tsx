@@ -1,9 +1,8 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 
-
-import { Button, type ButtonProps } from "../../ui/button";
+import { Button } from "../../ui/button";
 import { HeroMemberList } from "../../ui/hero-member-list";
 import { Mockup, MockupFrame } from "../../ui/mockup";
 import { Section } from "../../ui/section";
@@ -11,20 +10,9 @@ import { CyclingHyperText } from "../../ui/cycling-hyper-text";
 
 import { cn } from "@/lib/utils";
 
-interface HeroButtonProps {
-  href: string;
-  text: string;
-  variant?: ButtonProps["variant"];
-  icon?: ReactNode;
-  iconRight?: ReactNode;
-}
-
 interface HeroProps {
-  title?: string;
-  description?: string;
   mockup?: ReactNode | false;
   badge?: ReactNode | false;
-  buttons?: HeroButtonProps[] | false;
   className?: string;
 }
 
@@ -34,77 +22,6 @@ export default function Hero({
   className,
 }: HeroProps) {
   const words = ["Sales", "Leads", "Revenue", "Buyers", "Users"];
-  const [email, setEmail] = useState("");
-  const [buttonText, setButtonText] = useState("Join the Waitlist");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleEmailSubmit = async () => {
-    if (!email || isSubmitting) return;
-
-    setIsSubmitting(true);
-    
-    try {
-      console.log('Submitting email:', email);
-
-      const response = await fetch("https://sheetdb.io/api/v1/ospfsyvgjb57s", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email
-        }),
-      });
-
-      console.log('Response status:', response.status);
-      console.log('Response status text:', response.statusText);
-
-      if (response.ok) {
-        const responseText = await response.text();
-        console.log('Response body:', responseText);
-        
-        setButtonText("Thank you!");
-        setIsSubmitted(true);
-        setEmail("");
-        // Reset button text after 3 seconds
-        setTimeout(() => {
-          setButtonText("Join the Waitlist");
-          setIsSubmitted(false);
-        }, 3000);
-      } else {
-        const errorText = await response.text();
-        console.error("Failed to submit email:", response.status, response.statusText, errorText);
-        
-        // Handle specific error cases
-        if (response.status === 400) {
-          setButtonText("Setup Required");
-          setTimeout(() => {
-            setButtonText("Join the Waitlist");
-          }, 3000);
-        } else {
-          setButtonText("Try Again");
-          setTimeout(() => {
-            setButtonText("Join the Waitlist");
-          }, 2000);
-        }
-      }
-    } catch (error) {
-      console.error("Error submitting email:", error);
-      setButtonText("Try Again");
-      setTimeout(() => {
-        setButtonText("Join the Waitlist");
-      }, 2000);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
-      handleEmailSubmit();
-    }
-  };
 
   return (
     <Section
@@ -138,32 +55,17 @@ export default function Hero({
               cycleDuration={4000}
             />
           </div>
-          <p className="text-md animate-appear text-muted-foreground relative z-10 max-w-[740px] font-medium text-balance opacity-0 delay-100 sm:text-xl mb-8">
+          <p className="text-md animate-appear text-muted-foreground relative z-10 max-w-[740px] font-medium text-balance opacity-0 delay-100 sm:text-xl mb-4">
             KnownVisitors identifies your anonymous website visitors even if they never filled out a form.
           </p>
-          {/* Email Input and Waitlist Button */}
-          <div className="animate-appear relative z-10 flex flex-col sm:flex-row gap-3 max-w-md w-full opacity-0 delay-300">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onKeyPress={handleKeyPress}
-              disabled={isSubmitting || isSubmitted}
-              className="flex-1 px-4 py-3 bg-background/50 border border-border/50 rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#1da84f]/50 focus:border-[#1da84f] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#1da84f]/20 disabled:opacity-50 disabled:cursor-not-allowed"
-            />
+          {/* Centered CTA Button */}
+          <div className="animate-appear relative z-10 flex justify-center opacity-0 delay-300">
             <Button
               variant="default"
               size="lg"
-              onClick={handleEmailSubmit}
-              disabled={isSubmitting || isSubmitted || !email}
-              className={`transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#1da84f]/30 transform ${
-                isSubmitted 
-                  ? "bg-green-600 hover:bg-green-700 text-white" 
-                  : "bg-[#1da84f] hover:bg-[#1da84f]/90 text-white"
-              } ${(isSubmitting || isSubmitted || !email) ? "opacity-50 cursor-not-allowed" : ""}`}
+              className="bg-[#1da84f] hover:bg-[#1da84f]/90 text-white"
             >
-              {isSubmitting ? "Submitting..." : buttonText}
+              Get in Touch
             </Button>
           </div>
           {mockup !== false && (
