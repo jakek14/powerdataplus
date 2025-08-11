@@ -120,17 +120,17 @@ export default function Hero({
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-radial from-[#1da84f]/4 via-[#1da84f]/2 to-transparent rounded-full blur-xl opacity-40" />
       </div>
       
-      <div className="max-w-container mx-auto flex flex-col gap-0 pt-0 sm:gap-0 relative z-10">
-        <div className="flex flex-col items-center gap-0 text-center">
+      <div className="max-w-container mx-auto flex flex-col gap-2 pt-4 sm:gap-2 relative z-10">
+        <div className="flex flex-col items-center gap-2 text-center">
           {badge !== false && (
-            <div className="-mt-12 sm:-mt-16">
+            <div className="-mt-10 sm:-mt-12">
               {badge}
             </div>
           )}
           <h1 className="animate-appear from-foreground to-foreground dark:to-muted-foreground relative z-10 block bg-linear-to-r bg-clip-text text-4xl leading-tight font-semibold text-balance text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-8xl md:leading-tight text-center">
             Turn Anonymous Visitors Into
           </h1>
-          <div className="text-center mb-8">
+          <div className="text-center mb-4">
             <CyclingHyperText
               words={words}
               className="text-4xl leading-tight font-semibold sm:text-6xl md:text-8xl text-[#1da84f]"
@@ -142,7 +142,7 @@ export default function Hero({
             KnownVisitors identifies your anonymous website visitors even if they never filled out a form.
           </p>
           {/* Email Input and Waitlist Button */}
-          <div className="animate-appear relative z-10 flex flex-col sm:flex-row gap-4 max-w-md w-full opacity-0 delay-300">
+          <div className="animate-appear relative z-10 flex flex-col sm:flex-row gap-3 max-w-md w-full opacity-0 delay-300">
             <input
               type="email"
               placeholder="Enter your email"
@@ -167,7 +167,7 @@ export default function Hero({
             </Button>
           </div>
           {mockup !== false && (
-            <div className="relative w-full pt-8">
+            <div className="relative w-full pt-6">
               <MockupFrame
                 className="animate-appear opacity-0 delay-700"
                 size="small"
