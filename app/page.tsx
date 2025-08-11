@@ -3,7 +3,6 @@ import Footer from "../components/sections/footer/default";
 import Hero from "../components/sections/hero/default";
 import Items from "../components/sections/items/default";
 import Logos from "../components/sections/logos/default";
-import TimelineSection from "../components/sections/timeline/default";
 import DarkModeLogo from "../components/logos/darkmode-logo";
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
       </div>
       <Hero />
       <Logos />
-      <TimelineSection />
       <Items />
       <BentoGridSection />
       <Footer />
