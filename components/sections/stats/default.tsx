@@ -65,17 +65,17 @@ export default function StatsSection({ className }: StatsSectionProps) {
         </p>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
           {/* Card 1 */}
-          <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 sm:p-10 text-center flex flex-col items-center">
+          <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 sm:p-10 text-center flex flex-col items-center transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_12px_40px_-10px_rgba(29,168,79,0.35)] hover:border-[#1da84f]/40">
             <CountUp end={825} suffix="m" className="text-5xl sm:text-6xl font-semibold tracking-tight text-white" />
             <div className="mt-3 text-xl sm:text-2xl text-muted-foreground">US Records</div>
           </div>
           {/* Card 2 */}
-          <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 sm:p-10 text-center flex flex-col items-center">
+          <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 sm:p-10 text-center flex flex-col items-center transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_12px_40px_-10px_rgba(29,168,79,0.35)] hover:border-[#1da84f]/40">
             <CountUp end={2000} className="text-5xl sm:text-6xl font-semibold tracking-tight text-white" />
             <div className="mt-3 text-xl sm:text-2xl text-muted-foreground">Publishers</div>
           </div>
           {/* Card 3 */}
-          <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 sm:p-10 text-center flex flex-col items-center">
+          <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 sm:p-10 text-center flex flex-col items-center transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_12px_40px_-10px_rgba(29,168,79,0.35)] hover:border-[#1da84f]/40">
             <div className="text-5xl sm:text-6xl font-semibold tracking-tight text-white">
               <CountUp end={8} suffix="m" />
               <span className="mx-1">-</span>
