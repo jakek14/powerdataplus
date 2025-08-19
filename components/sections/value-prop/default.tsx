@@ -25,6 +25,15 @@ export default function ValuePropSection({ className }: ValuePropSectionProps) {
   return (
     <Section className={cn("pt-10 sm:pt-12 md:pt-16 pb-12 sm:pb-16 md:pb-20", className)}>
       <div className="max-w-container mx-auto px-4 md:px-0">
+        <motion.h2
+          className="text-center text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 sm:mb-8"
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-120px" }}
+        >
+          Better Data. Better Results.
+        </motion.h2>
         {/* Top cards */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6"
